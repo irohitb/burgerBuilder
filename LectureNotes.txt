@@ -1,0 +1,31 @@
+Note: In Index.css we setup global body style since rendor starts from Index.js and we import it in Index.js
+//To change font-family from imported fonts from google -> Public -> Index.html
+//We will use component to manage state and container for everything else
+//<main> Tag is used to showcase main content
+//IF we have two adjacent jsx element (we can't have), We have to use array and give each item a key
+//Another alternate is create HOC -> It will server purpose of wrapping something and passing function
+
+//Question to ask, Why didn't we used div?
+
+//Soluction to adjacent JSX element
+//Lecture 4
+//Css -> Npm run eject -> webpack -> Options
+//Removed logo
+//Removed most of the content from App.js
+//Index.css change font
+//removed App.css
+
+
+//lecture 6
+//We can seperate our project into two parts
+//Toolbar to navigate and the main burger builder
+//We create a sub folder for layout
+//We created Component and container -> we will create container in components because we don't need to manage any state
+//In components -> Sub folder -> Layout -> in layout , layout.js file
+//We create assests folder
+//In layout.js, we use *main and there we will put component we will wrap with this content -> hence we will use props.children
+//*We use this component as a wrapper around the core content component we want to render to the screen
+//Now in main.js,we want have two adjacent element but since we cannot have two adjacet JSX element together, we create HOC named Aux
+//Aux is simple -> Takes props and return props
+//We import Aux to our Layout and layout to app
+//Run the app afterwards
