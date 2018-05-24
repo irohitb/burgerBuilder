@@ -6,9 +6,10 @@ Note: In Index.css we setup global body style since rendor starts from Index.js 
 //Another alternate is create HOC -> It will server purpose of wrapping something and passing function
 
 //Question to ask, Why didn't we used div?
+https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/t/lecture/8109010?start=0
 
-//Soluction to adjacent JSX element
-//Lecture 4
+
+//Lecture 5
 //Css -> Npm run eject -> webpack -> Options
 //Removed logo
 //Removed most of the content from App.js
@@ -29,3 +30,14 @@ Note: In Index.css we setup global body style since rendor starts from Index.js 
 //Aux is simple -> Takes props and return props
 //We import Aux to our Layout and layout to app
 //Run the app afterwards
+
+
+//Lecture 7
+//Starting the implementation of the burger builder
+//---x-x----x--x---
+//This should actually be a container because here we need to manage the state of burger
+//We created a new folder in container known as burger Builder
+//Burger Builder contains Burger and Burger Controls
+//We wrap it with Aux like we wrapped layout
+//We imported it to App.js
+//We wrapped it inside layout.s
