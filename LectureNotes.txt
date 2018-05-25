@@ -4,9 +4,9 @@ Note: In Index.css we setup global body style since rendor starts from Index.js 
 //<main> Tag is used to showcase main content
 //IF we have two adjacent jsx element (we can't have), We have to use array and give each item a key
 //Another alternate is create HOC -> It will server purpose of wrapping something and passing function
-
 //Question to ask, Why didn't we used div?
 https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/t/lecture/8109010?start=0
+//if we import react, can we use jsx anywhere 
 
 
 //Lecture 5
