@@ -40,4 +40,17 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/t/lecture/810
 //Burger Builder contains Burger and Burger Controls
 //We wrap it with Aux like we wrapped layout
 //We imported it to App.js
-//We wrapped it inside layout.s
+//We wrapped it inside layout.js, Since we wrapped it inside Layout.js, We could add styling in Layout.css which will effect it since we are passing props.children
+//We created layout.csss and added maegin of 16px
+
+
+//Lecture 8
+//Adding DYnamic ingredient components
+//---x----x-----x---
+//We would add burger needed component and ingredients
+//We added the CSS provided to us by Max
+//We created Burger-ingredient cascade Style sheet and Burger-ingrident.js
+//Now there would be different ingridents which we tend to send from Burger.js from props
+//In burger-Ingrident.js file, we create a functional component and import react since we are going to use jsx
+//We created a ingrident variable and set it as value to null because we don't want any invalid Value to be passed (more like let ingrident;) -> We won't render anything
+//In Switch statement we do props.type -> type is the property we expect to receive -> based on the type we receive will use the case
