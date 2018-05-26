@@ -6,12 +6,12 @@ const BurgerIngredients = (props) => {
   let ingredient = null;
 
   switch (props.type) {
-    case ('bread-bottom');
-      ingredient = <div className={classes.BreadBotton};</div>
+    case ('bread-bottom'):
+      ingredient = <div className={classes.BreadBottom}></div>
       console.log(typeof ingredient);
     break;
-    case ('bread-top');
-      ingrident = (
+    case ('bread-top'):
+    ingredient = (
         <div className = {classes.BreadTop}>
           <div className = {classes.Seeds1}></div>
           <div className = {classes.Seeds2}></div>
@@ -19,20 +19,20 @@ const BurgerIngredients = (props) => {
         );
         console.log(typeof ingrident)
     break;
-    case ('meat');
-      ingrident = <div className = {classes.Meat}> </div>
+    case ('meat'):
+    ingredient = <div className = {classes.Meat}> </div>
     break;
-    case ('Cheese');
-      ingrident = <div className = {classes.Cheese}> </div>
+    case ('Cheese'):
+    ingredient = <div className = {classes.Cheese}> </div>
     break;
-    case ('Salad');
-      ingrident = <div className = {classes.Salad}> </div>
+    case ('Salad'):
+    ingredient = <div className = {classes.Salad}> </div>
     break;
-    case ('Bacon');
-      ingrident = <div className = {classes.Bacon}> </div>
+    case ('Bacon'):
+    ingredient = <div className = {classes.Bacon}> </div>
     break;
     default:
-      ingrident = null;
+    ingredient = null;
     }
 
     return ingredient;

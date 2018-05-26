@@ -6,7 +6,7 @@ Note: In Index.css we setup global body style since rendor starts from Index.js 
 //Another alternate is create HOC -> It will server purpose of wrapping something and passing function
 //Question to ask, Why didn't we used div?
 https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/t/lecture/8109010?start=0
-//if we import react, can we use jsx anywhere 
+//if we import react, can we use jsx anywhere
 
 
 //Lecture 5
@@ -42,6 +42,7 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/t/lecture/810
 //We imported it to App.js
 //We wrapped it inside layout.js, Since we wrapped it inside Layout.js, We could add styling in Layout.css which will effect it since we are passing props.children
 //We created layout.csss and added maegin of 16px
+//Overflow: Scroll -> We can scroll it
 
 
 //Lecture 8
@@ -54,3 +55,14 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/t/lecture/810
 //In burger-Ingrident.js file, we create a functional component and import react since we are going to use jsx
 //We created a ingrident variable and set it as value to null because we don't want any invalid Value to be passed (more like let ingrident;) -> We won't render anything
 //In Switch statement we do props.type -> type is the property we expect to receive -> based on the type we receive will use the case
+
+//Lecture 9
+//Props Valiadtion
+//--x--x----x--
+//Added Props Validation
+
+
+//Lecture 10
+//Starting the burger Component
+//---x----x---
+//In burger.js, we created a functional component which receives some props
