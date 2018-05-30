@@ -6,7 +6,16 @@ Note: In Index.css we setup global body style since rendor starts from Index.js 
 //Another alternate is create HOC -> It will server purpose of wrapping something and passing function
 //Question to ask, Why didn't we used div?
 https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/t/lecture/8109010?start=0
-//if we import react, can we use jsx anywhere
+//if we import react, can we use jsx anywhere?
+//we can also add state using constructor(Props), super(props); this.state (this because we are inside a method)
+//Burger project lecture 11 to know how to pass states to functional component
+https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/3956582
+https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/4316856
+
+//Question.
+//When we console.log(typeof array) -> Does it always logs it as an object
+
+
 
 
 //Lecture 5
@@ -66,3 +75,55 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/t/lecture/810
 //Starting the burger Component
 //---x----x---
 //In burger.js, we created a functional component which receives some props
+//we imported react and BurgerIngredients.js
+//We added types under <BurgerIngredients which will passed as props.type to our BurgerIngredients.js
+//we created burger.css and added some css and media query
+//All the props are static and added manually they look like this   <BurgerIngredients type="bread-top"/> <BurgerIngredients type="meat"/> and wrapped everything with div and added our own styling
+//Since we are using switch statement > as we pass props.type > it will forward this to switch and hence display it
+//We imported this to container > burger Builder > burger Builder.js
+
+
+Lecture 11
+//Outputting burger ingredient Dynamically
+//----x-----x----
+//We will add state, state is an object (in max tutorial) -> max
+//We pass this array to burger Ingredients through  <Burger ingredient={this.state.ingrident}/> and convert this object to array using Object.keys
+//Then we will use 1st map to find the property of the associated objected for example salad:1 -> we will find the property, which is one here -> this is done through
+return [...Array(props.ingredient[igKey])] -> This will return a single empty array in case of 1, two empty array in case of 2 and so on..
+will map this return and pass in the value of the string which will get as loop progress, this value is pushed in as form of JSX to form an Array
+//SInce we are using one variable here, transformedIngrident, we use JSx to insert our value by doing something like this in return {transformedIngrident}
+
+-----Max code alternate classical simplified version----
+
+////Max code for the above logic
+//-----
+let transformedIngrident = Object.keys(props.ingredient) //["salad", "bacon", "cheese", "meat"]
+transformedIngrident = transformedIngrident.map(igKey => { //igKey will pass string which will be mapped like salad then bacon then cheese and then meat
+
+//This will tell the value corresponding to the give string of object for example in case of Salad it will show 1
+
+//[undefined] -> This is because we have  one salad in Ingridents
+//[undefined] -> This is because we have  one bacon
+//[undefined, undefined, undefined] This is because we have  3 bacon
+//[undefined, undefined] This is because we have two meat
+  return [...Array(props.ingredient[igKey])].map((_, i) => {
+    console.log(transformedIngrident)
+      return <BurgerIngredients type={igKey} key={i} />
+  //This will first create an empty array and the map used second time will map each ingrident into it with type and key
+  })
+})
+
+////My Logic
+//------
+let transformedIngrident = Object.keys(props.ingredient)
+var DisplayIngre = [] //this should be an array
+var i;
+var j;
+
+for (i=0; i<transformedIngrident.length; i++){
+  let keyValue = props.ingredient[transformedIngrident[i]]
+  let igKey = transformedIngrident[i]
+    for ( j=0; j<keyValue; j++) {
+DisplayIngre.push(<BurgerIngredients type={igKey} key={i+j} />);
+  }
+}
