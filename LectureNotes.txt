@@ -24,6 +24,10 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/431
 //Removed most of the content from App.js
 //Index.css change font
 //removed App.css
+//-------------------
+//-------------------
+//-------------------
+
 
 
 //lecture 6
@@ -39,6 +43,9 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/431
 //Aux is simple -> Takes props and return props
 //We import Aux to our Layout and layout to app
 //Run the app afterwards
+//-------------------
+//-------------------
+//-------------------
 
 
 //Lecture 7
@@ -52,6 +59,9 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/431
 //We wrapped it inside layout.js, Since we wrapped it inside Layout.js, We could add styling in Layout.css which will effect it since we are passing props.children
 //We created layout.csss and added maegin of 16px
 //Overflow: Scroll -> We can scroll it
+//-------------------
+//-------------------
+//-------------------
 
 
 //Lecture 8
@@ -64,11 +74,18 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/431
 //In burger-Ingrident.js file, we create a functional component and import react since we are going to use jsx
 //We created a ingrident variable and set it as value to null because we don't want any invalid Value to be passed (more like let ingrident;) -> We won't render anything
 //In Switch statement we do props.type -> type is the property we expect to receive -> based on the type we receive will use the case
+//-------------------
+//-------------------
+//-------------------
+
 
 //Lecture 9
 //Props Valiadtion
 //--x--x----x--
 //Added Props Validation
+//-------------------
+//-------------------
+//-------------------
 
 
 //Lecture 10
@@ -81,6 +98,9 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/431
 //All the props are static and added manually they look like this   <BurgerIngredients type="bread-top"/> <BurgerIngredients type="meat"/> and wrapped everything with div and added our own styling
 //Since we are using switch statement > as we pass props.type > it will forward this to switch and hence display it
 //We imported this to container > burger Builder > burger Builder.js
+//-------------------
+//-------------------
+//-------------------
 
 
 Lecture 11
@@ -127,3 +147,10 @@ for (i=0; i<transformedIngrident.length; i++){
 DisplayIngre.push(<BurgerIngredients type={igKey} key={i+j} />);
   }
 }
+
+//-------------------
+//-------------------
+//-------------------
+
+
+//Calculating the ingredient sum dynamically

@@ -24,6 +24,8 @@ const burger = (props) => {
 */
 
 let transformedIngrident = Object.keys(props.ingredient)
+
+
 var DisplayIngre = [] //this should be an array
 var i;
 var j;
@@ -32,9 +34,11 @@ for (i=0; i<transformedIngrident.length; i++){
   let keyValue = props.ingredient[transformedIngrident[i]]
   let igKey = transformedIngrident[i]
     for ( j=0; j<keyValue; j++) {
-DisplayIngre.push(<BurgerIngredients type={igKey} key={i+j} />);
+DisplayIngre.push(<BurgerIngredients type={igKey} key={igKey+i+j} />);
   }
 }
+
+console.log(DisplayIngre)
 
 
 
