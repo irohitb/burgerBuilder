@@ -15,6 +15,10 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/431
 //Question.
 //When we console.log(typeof array) -> Does it always logs it as an object
 
+//To do
+//Read flex properties (flex-flow, flex wrapper), display flex
+..Read when do we use <Something> </something> and when do we use <something... />
+
 
 
 
@@ -153,6 +157,8 @@ DisplayIngre.push(<BurgerIngredients type={igKey} key={i+j} />);
 //-------------------
 
 
+
+
 //Calculating the ingredient sum dynamically
 //--------
 
@@ -190,3 +196,12 @@ if (DisplayIngre.length === 0) {
 DisplayIngre = <p> Kuch Nhi </p>
 console.log(DisplayIngre)
 }
+//-------------------
+//-------------------
+//-------------------
+
+
+
+
+//Adding Building control Component
+//-----------

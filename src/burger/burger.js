@@ -8,9 +8,7 @@ const burger = (props) => {
 /*
   let transformedIngrident = Object.keys(props.ingredient) //["salad", "bacon", "cheese", "meat"]
   transformedIngrident = transformedIngrident.map(igKey => { //igKey will pass string which will be mapped like salad then bacon then cheese and then meat
-
   //This will tell the value corresponding to the give string of object for example in case of Salad it will show 1
-
   //[undefined] -> This is because we have  one salad in Ingridents
   //[undefined] -> This is because we have  one bacon
   //[undefined, undefined, undefined] This is because we have  3 bacon
@@ -50,12 +48,6 @@ if (DisplayIngre.length === 0) {
 DisplayIngre = <p> Kuch Nhi </p>
 console.log(DisplayIngre)
 }
-
-
-
-
-
-
 
 
   return (
