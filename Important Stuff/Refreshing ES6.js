@@ -4,12 +4,12 @@
 //--------------
 
 
-////Note: objects and array are reference type 
+////Note: objects and array are reference type
 /// To read object Destruction, Reference in primative type
 
 
 //-------------
-// Index 
+// Index
 //-------------
 
 1. Ternary Expression
@@ -25,46 +25,48 @@
 	---** function returniing function or return function
 	---** CallBack function
 	---** Prototype Inheritance
-	
+
 5. Clases
 	---** Instance of a class
 	---** Passing Classes
-	---** Inheritance in CLasses 
-	
-6. New Operator 
-	---** Spread and Rest operator 
-	
-7. Destructuring 
+	---** Inheritance in CLasses
 
-8. In operator in Javascript 
+6. New Operator
+	---** Spread and Rest operator
 
-9. Instance and object 
+7. Destructuring
 
-10. Static vs Instance Method 
+8. In operator in Javascript
 
-11.Prototypal Inheritance 
-	---** Differential Inheritance 
+9. Instance and object
+
+10. Static vs Instance Method
+
+11.Prototypal Inheritance
+	---** Differential Inheritance
 	---** Object.create()
-	---** Subclassing 
+	---** Subclassing
 
 12. Blind
 
-13. Partially blind function 
+13. Partially blind function
 
-14. Object.map 
+14. Object.map
 
-15. Object.keys 
+15. Object.keys
 
-16 for....in 
+16 for....in
 
-17 .map() 
+17 .map()
 
 18. ForEach
 
-19 .filter 
+19 .filter
 
 20. FInd and Find Index -> Array
-	
+
+21. Array concat()
+
 
 //------------------------
 //------------------------
@@ -72,15 +74,15 @@
 
 
 
-	
 
 
 
 
 
 
-///ternary expression -> Google Search 
-//--- Static Method -> Method which is not attached to single instance 
+
+///ternary expression -> Google Search
+//--- Static Method -> Method which is not attached to single instance
 
 
 
@@ -103,7 +105,7 @@ When called as an unbound function, this will default to the global context or w
 
 
 
-//Slice Method vs Splice method 
+//Slice Method vs Splice method
 //--------------
 //****---****---
 
@@ -130,42 +132,42 @@ console.log(array);
 ar array2=[6,7,8,9,0];
 console.log(array2.splice(2,1));
 // shows [8]
- 
+
 console.log(array2.splice(2,0));
 //shows [] , as no item(s) removed.
- 
+
 console.log(array2);
 // shows [6,7,9,0]
- 
+
 var array3=[11,12,13,14,15];
 console.log(array3.splice(2,1,"Hello","World"));
 // shows [13]
- 
+
 console.log(array3);
 // shows [11, 12, "Hello", "World", 14, 15]
 
 
-//Slice Method 
+//Slice Method
 //----------
 var array=[1,2,3,4,5]
 console.log(array.slice(2));
 // shows [3, 4, 5], returned selected element(s).
- 
+
 console.log(array.slice(-2));
 // shows [4, 5], returned selected element(s).
 console.log(array);
 // shows [1, 2, 3, 4, 5], original array remains intact.
- 
+
 var array2=[6,7,8,9,0];
 console.log(array2.slice(2,4));
 // shows [8, 9]
- 
+
 console.log(array2.slice(-2,4));
 // shows [9]
- 
+
 console.log(array2.slice(-3,-1));
 // shows [8, 9]
- 
+
 console.log(array2);
 // shows [6, 7, 8, 9, 0]
 
@@ -200,9 +202,9 @@ const aux = (props) => {
 }
 
 
-//Object Constructor 
+//Object Constructor
 //-------------
-//BluePrint for the object or this is object constructor function 
+//BluePrint for the object or this is object constructor function
 function Person(first, last, age, eye) {
     this.firstName = first;
     this.lastName = last;
@@ -210,13 +212,13 @@ function Person(first, last, age, eye) {
     this.eyeColor = eye;
 }
 
-//Creating an object 
-var myFather = new Person("John", "Doe", 50, "blue"); //-> This is an object 
+//Creating an object
+var myFather = new Person("John", "Doe", 50, "blue"); //-> This is an object
 
-//To add property to the exsisting Object 
+//To add property to the exsisting Object
 myFather.nationality = "English";
 
-//You can't add new property like this 
+//You can't add new property like this
 Person.nationality = "English";
 
 // Add a name method to first object
@@ -226,25 +228,25 @@ myFather.name = function() {
 
 // Display full name
 document.getElementById("demo").innerHTML =
-"My father is " + myFather.name(); 
+"My father is " + myFather.name();
 
-//Some In-built Javascript Constructor 
+//Some In-built Javascript Constructor
 WebLink: -> www.w3schools.com/js/tryit.asp?filename=tryjs_object_constructor_builtin
 
 
 //function returniing function or return function
 //--------------
 
-//React Example 
+//React Example
 
 const aux = (props) => props.children;
 //Curly brackets aren’t required if only one expression is present.
-//About callback function 
+//About callback function
 
 
 //CallBack function -> article -> https://codeburst.io/javascript-what-the-heck-is-a-callback-aba4da2deced
 //-------------
-//Callback brief example 
+//Callback brief example
 //function doHomework(subject, callback) {
   alert(`Starting my ${subject} homework.`);
   callback();
@@ -254,7 +256,7 @@ function alertFinished(){
 }
 doHomework('math', alertFinished);
 
-//If you console.log this -> You get 
+//If you console.log this -> You get
 //Starting my maths homeworkk
 //Finished my homework
 
@@ -275,7 +277,7 @@ Person.prototype.name = function() {
 };
 
 
-//Higher order function -> Function that accepts function as an argument 
+//Higher order function -> Function that accepts function as an argument
 
 
 //------------------------
@@ -295,8 +297,8 @@ Person.prototype.name = function() {
 //Class in Javascript
 //-------
 //****---****---
-//Note: 
-An important difference between function declarations and class declarations is that function declarations are hoisted and class declarations are not. You first need to declare your class and then access it, otherwise code like the following will throw a 
+//Note:
+An important difference between function declarations and class declarations is that function declarations are hoisted and class declarations are not. You first need to declare your class and then access it, otherwise code like the following will throw a
 //classes are blueprint for object
 //classes can have methods and properties
 //Methods -> Functions attached to classes
@@ -372,7 +374,7 @@ public class Car{
     }
     public void accelerate(int increment){
         speed += increment;
-    }   
+    }
     ...
 }
 let honda = new car() //Will be instance
@@ -405,7 +407,7 @@ const person = new Human();
 person.printtMyname(); //will work and console.log Shivom
 
 
-//Passing Classes 
+//Passing Classes
 //---------------------
 const something = class extends anything {
 }
@@ -428,16 +430,16 @@ class Person {
 		}
 }
 
-//note 
+//note
 printMyname = () => {
 		console.log(this.name)
 	}
-//Is same as 
+//Is same as
 
 	printMyname() {
 		console.log(this.name);
 	}
-Note: 
+Note:
 
 
 
@@ -493,7 +495,7 @@ const numbers = [1,2,3]
 console.log(num1, num2)
 //1 and 2 would be answer
 
-//Example 2 
+//Example 2
 let obj = { first: 'Jane', last: 'Doe' };
 let { first: f, last: l } = obj; // (A)
     // f = 'Jane'; l = 'Doe'
@@ -505,7 +507,7 @@ const yell = PassedComponent => ({children, ...props}) => {
             {props.myAngryTitleProps}, {children.toUpperCase()}!
         </PassedComponent>
     )
-//the above code is equivalent to 
+//the above code is equivalent to
 const yell = PassedComponent => (props) => {
     return (
         <PassedComponent {...props}>
@@ -514,7 +516,7 @@ const yell = PassedComponent => (props) => {
     );
 };
 
-    
+
 
 //or
 [num1, ,num3] = numbers
@@ -532,7 +534,7 @@ console.log(num1, num3)
 
 
 
-//In operator in Javascript 
+//In operator in Javascript
 //-------------
 //The in operator returns true if the specified property is in the specified object or its prototype chain.
 
@@ -546,7 +548,7 @@ if ('make' in car === false) {  -> // This will be false
   car.make = 'Suzuki';
 }
 
-console.log(car.make); //Suzuki 
+console.log(car.make); //Suzuki
 
 
 
@@ -558,12 +560,12 @@ console.log(car.make); //Suzuki
 
 
 
-//Instance and object 
+//Instance and object
 //---------------
 //----**-----**---
 //There's no real significant difference that should consume too much of your time.  There might be some fancy language that some people might take up a lot of spaces to write about, but at the end of the day, as far as a coder, developer, programmer, architect, is concerned, an instance of a class and an object mean the same thing and can often be used interchangeably.  I have never met anyone in my career that would be picky and spend half hour trying to point out the differences, because there's really none.  Time can be better spent on other development efforts.
 
-//Objects are defination of something, instane are those things 
+//Objects are defination of something, instane are those things
 
 
 
@@ -576,7 +578,7 @@ console.log(car.make); //Suzuki
 
 
 
-//Static vs Instance Method 
+//Static vs Instance Method
 //--------------
 //----**-----**---
 
@@ -604,11 +606,11 @@ obj.nonstaticMethod();//Refer to the instance's class's code
 
 
 
-//Prototypal Inheritance 
+//Prototypal Inheritance
 //----------------------
 //----**-----**-----**--
 
-In JavaScript, all functions are also objects, which means that they can have properties. And as it so happens, they all have a property called `prototype
+In JavaScript, all functions are also objects, which means that they can have properties. And as it so happens, they all have a property called prototype
 
 Any time you create a function, it will automatically have a property called prototype, which will be initialized to an empty object.
 
@@ -624,8 +626,8 @@ fido.bark(); // ‘woof!’
 
 //Differential Inheritance
 //-----------------------
-//In the above example 
-fido.hasOwnProperty(‘bark’) === false 
+//In the above example
+fido.hasOwnProperty(‘bark’) === false
 
 There’s really no such property as fido.bark. It doesn’t exist. Instead, fido has access to the bark() method on Dog.prototype because it’s an instance of Dog. This is the “invisible link” I mentioned. More commonly, it’s referred to as the “prototype chain”.
 
@@ -643,8 +645,8 @@ child.hasOwnProperty(‘foo’); // false
 child.foo(); // ‘bar’
 
  //it creates a new, empty object that has parent in its prototype chain. That means that even though child doesn’t have its own foo() method, it has access to the foo() method from parent.
- 
-//SubClassing 
+
+//SubClassing
 //-----------
 function Rectangle( width, height ) {
  this.width = width;
@@ -661,11 +663,11 @@ Rectangle.prototype.area = function() {
 
 There’s that this keyword again. Just like in the constructor, this inside of a method refers to the instance.
 
-rect.area(); 
+rect.area();
 
-//Subclassing 
+//Subclassing
 //-------
-//In the above example, we want to create 
+//In the above example, we want to create
 
 function Square( length ) {
  this.width = this.height = length;
@@ -701,7 +703,7 @@ var module = {
 module.getX(); // 81
 
 var retrieveX = module.getX;
-retrieveX();   
+retrieveX();
 // returns 9 - The function gets invoked at the global scope
 
 // Create a new function with 'this' bound to module
@@ -726,7 +728,7 @@ boundGetX(); // 81
 
 
 
-.map method 
+.map method
 //------
 //---***---***---
 
@@ -745,17 +747,17 @@ var numbers = [1, 4, 9];
 var roots = numbers.map(Math.sqrt);
 
 //Using map to reformat objects in an array
-var reformattedArray = kvArray.map(obj =>{ 
+var reformattedArray = kvArray.map(obj =>{
    var rObj = {};
    rObj[obj.key] = obj.value;
    return rObj;
-   
-   });
-// reformattedArray is now [{1: 10}, {2: 20}, {3: 30}], 
 
-// kvArray is still: 
-// [{key: 1, value: 10}, 
-//  {key: 2, value: 20}, 
+   });
+// reformattedArray is now [{1: 10}, {2: 20}, {3: 30}],
+
+// kvArray is still:
+// [{key: 1, value: 10},
+//  {key: 2, value: 20},
 //  {key: 3, value: 30}]
 
 //Mapping an array of numbers using a function containing an argument
@@ -791,7 +793,7 @@ console.log(Object.keys(anObj)); // console: ['2', '7', '100']
 var myObj = Object.create({}, {
   getFoo: {
     value: function () { return this.foo; }
-  } 
+  }
 });
 myObj.foo = 1;
 console.log(Object.keys(myObj)); // console: ['foo']
@@ -799,13 +801,13 @@ console.log(Object.keys(myObj)); // console: ['foo']
 //------------------------
 //------------------------
 
- 
- 
+
+
  ForEach
 //------
 //---***---***---
 
-//Before 
+//Before
 const items = ['item1', 'item2', 'item3'];
 const copy = [];
 
@@ -813,7 +815,7 @@ for (let i=0; i<items.length; i++) {
   copy.push(items[i])
 }
 
-//After 
+//After
 const items = ['item1', 'item2', 'item3'];
 const copy = [];
 
@@ -873,18 +875,18 @@ function isNumber(obj) {
 function filterByID(item) {
   if (isNumber(item.id) && item.id !== 0) {
     return true;
-  } 
+  }
   invalidEntries++;
-  return false; 
+  return false;
 }
 
 var arrByID = arr.filter(filterByID);
 
-console.log('Filtered Array\n', arrByID); 
+console.log('Filtered Array\n', arrByID);
 // Filtered Array
 // [{ id: 15 }, { id: -1 }, { id: 3 }, { id: 12.2 }]
 
-console.log('Number of Invalid Entries = ', invalidEntries); 
+console.log('Number of Invalid Entries = ', invalidEntries);
 
 
 //Searching in array
@@ -915,11 +917,11 @@ console.log(filterItems('an')); // ['banana', 'mango', 'orange']
 //---***---***---
 
 const euros = [29.76, 41.85, 46.5];
-const sum = euros.reduce((total, amount) => total + amount); 
+const sum = euros.reduce((total, amount) => total + amount);
 sum // 118.11
 
 
-In this example, 
+In this example,
 Reduce accepts two parameters, the total and the current amount.
 The reduce method cycles through each number in the array much like it would in a for-loop.
 When the loop starts the total value is the number on the far left (29.76) and the current amount is the one next to it (41.85).
@@ -931,15 +933,15 @@ When there are no more numbers left in the array the method returns the total va
 const euros = [29.76, 41.85, 46.5];
 const average = euros.reduce((total, amount, index, array) => {
   total += amount;
-  if( index === array.length-1) { 
+  if( index === array.length-1) {
     return total/array.length;
-  }else { 
+  }else {
     return total;
   }
 });
 average // 39.37
 
-//Tally Example using redue 
+//Tally Example using redue
 const fruitBasket = ['banana', 'cherry', 'orange', 'apple', 'cherry', 'orange', 'apple', 'banana', 'cherry', 'orange', 'fig' ];
 
 const count = fruitBasket.reduce( (tally, fruit) => {
@@ -949,11 +951,10 @@ const count = fruitBasket.reduce( (tally, fruit) => {
 
 count // { banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1 }
 
-tally[fruit] = (tally[fruit] || 0) + 1 ; 
+tally[fruit] = (tally[fruit] || 0) + 1 ;
 
-//This here is a short circuit evluation 
+//This here is a short circuit evluation
 The use of the || here is called a short-circuit evaluation. This means that if tally[fruit] is truthy it will use its value, otherwise it will use 0 (and then add 1).
-
 
 
 var initialValue = 0;
@@ -963,10 +964,21 @@ var sum = [{x: 1}, {x:2}, {x:3}].reduce(function (accumulator, currentValue) {
 
 console.log(sum) //Logs 6
 
-Read about it here 
+Read about it here
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 
 //------------------------
 //------------------------
 //------------------------
 
+
+
+
+Array concat()
+//------
+//---***---***---
+
+var hege = ["Cecilie", "Lone"];
+var stale = ["Emil", "Tobias", "Linus"];
+var children = hege.concat(stale);
+// ["Cecilie", "Lone", "Emil", "Tobias", "Linus"]

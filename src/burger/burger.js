@@ -21,14 +21,21 @@ const burger = (props) => {
     //This will first create an empty array and the map used second time will map each ingrident into it with type and key
     })
   })
+transformedIngrident =  transformedIngrident.reduce((cur, next) => {
+    console.log(DisplayIngre)
+    return cur.concat(next)
+  },[]);
 */
 
-let transformedIngrident = Object.keys(props.ingredient)
 
+
+let transformedIngrident = Object.keys(props.ingredient) //["salad", "bacon", "cheese", "meat"]
+//Transform Ingredient will always have length of 4 here->["salad", "bacon", "cheese", "meat"]
 
 var DisplayIngre = [] //this should be an array
 var i;
 var j;
+
 
 for (i=0; i<transformedIngrident.length; i++){
   let keyValue = props.ingredient[transformedIngrident[i]]
@@ -38,7 +45,14 @@ DisplayIngre.push(<BurgerIngredients type={igKey} key={igKey+i+j} />);
   }
 }
 
+
+if (DisplayIngre.length === 0) {
+DisplayIngre = <p> Kuch Nhi </p>
 console.log(DisplayIngre)
+}
+
+
+
 
 
 

@@ -154,3 +154,39 @@ DisplayIngre.push(<BurgerIngredients type={igKey} key={i+j} />);
 
 
 //Calculating the ingredient sum dynamically
+//--------
+
+//Max code
+//If you console.log with max code, after setting everything in state to zero, We get 4 empty array
+//Something like this -> (4) [Array(0), Array(0), Array(0), Array(0)], if we change salad to 2 then we would have something like this [Array(2), Array(0), Array(0), Array(0)] and so on
+//Array contains 4 objects in case state of salad is 4 [Array(4) -> This will contain object
+//The inner array are empty hence checking the length won't do the trick
+//Hence we use reduce, In reduce what we did was, we created a function like this
+
+transformedIngrident = transformedIngrident.reduce((curr, next) => {
+  console.log("current")
+  console.log(curr)
+  console.log("next")
+  console.log(next)
+  console.log("tii")
+  console.log(transformedIngrident)
+    return [...curr, ...next]
+}, []);
+
+  console.log(transformedIngrident)
+
+//Here current would be [Array 4 and everything inside it and next would be Array[0]]
+so as it increments, it returns [...curr, ...next] this means everything of Array 4 and everything of next
+So whenever it sees an empty array, it won't add and hence we will get length
+
+
+//My code
+//We do check over here only ->   for ( j=0; j<keyValue; j++) {, Hence we don't need to use reduce i.e if there is a keyValue then only it will push in
+var DisplayIngre = [] which is an array
+
+Hence we can simply do this (we don't need to use reduce method)
+
+if (DisplayIngre.length === 0) {
+DisplayIngre = <p> Kuch Nhi </p>
+console.log(DisplayIngre)
+}
