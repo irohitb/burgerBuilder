@@ -11,6 +11,7 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/t/lecture/810
 //Burger project lecture 11 to know how to pass states to functional component
 https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/3956582
 https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/4316856
+https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/t/lecture/8111608
 
 //Question.
 //When we console.log(typeof array) -> Does it always logs it as an object
@@ -18,6 +19,8 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/431
 //To do
 //Read flex properties (flex-flow, flex wrapper), display flex
 ..Read when do we use <Something> </something> and when do we use <something... />
+.TO understand why do we make array of an object
+
 
 
 
@@ -31,6 +34,8 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/431
 //-------------------
 //-------------------
 //-------------------
+
+
 
 
 
@@ -52,6 +57,9 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/431
 //-------------------
 
 
+
+
+
 //Lecture 7
 //Starting the implementation of the burger builder
 //---x-x----x--x---
@@ -66,6 +74,9 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/431
 //-------------------
 //-------------------
 //-------------------
+
+
+
 
 
 //Lecture 8
@@ -83,6 +94,9 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/431
 //-------------------
 
 
+
+
+
 //Lecture 9
 //Props Valiadtion
 //--x--x----x--
@@ -90,6 +104,9 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/431
 //-------------------
 //-------------------
 //-------------------
+
+
+
 
 
 //Lecture 10
@@ -105,6 +122,9 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/431
 //-------------------
 //-------------------
 //-------------------
+
+
+
 
 
 Lecture 11
@@ -151,7 +171,6 @@ for (i=0; i<transformedIngrident.length; i++){
 DisplayIngre.push(<BurgerIngredients type={igKey} key={i+j} />);
   }
 }
-
 //-------------------
 //-------------------
 //-------------------
@@ -159,9 +178,10 @@ DisplayIngre.push(<BurgerIngredients type={igKey} key={i+j} />);
 
 
 
+
+Lecture 12
 //Calculating the ingredient sum dynamically
 //--------
-
 //Max code
 //If you console.log with max code, after setting everything in state to zero, We get 4 empty array
 //Something like this -> (4) [Array(0), Array(0), Array(0), Array(0)], if we change salad to 2 then we would have something like this [Array(2), Array(0), Array(0), Array(0)] and so on
@@ -203,5 +223,31 @@ console.log(DisplayIngre)
 
 
 
+
+//Lecture 13
 //Adding Building control Component
 //-----------
+//Here we created a folder from user can add or remove components
+//It consist of reusable buttons for which we created another folder named build-control-r -> build-control-r have buildcontrol.js and buildControl.css
+//We added build-controls.js/css in Build-Control folder
+//Note Build-Control-r is children of Build-Control
+//We applied styling/css in build-control.js -> build.controls.css (and added div inside them)
+//-------------------
+//-------------------
+//-------------------
+
+
+
+
+//Lecture 14
+//Outputting multiple Build Controls
+//---------
+//In this lecture we created an array of object where we added the label and and type.
+//Inside parent Build-control, we import child build-controls
+//We pass this array to child build-controls using map method
+//This looks something like this
+//{ controls.map(el =>(<BuildControl key={el.label} label={el.label} />))}
+//We use key since it is an array at it would be unique here and label is passed to the child component
+//-------------------
+//-------------------
+//-------------------
