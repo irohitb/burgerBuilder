@@ -55,17 +55,20 @@
 
 15. Object.keys
 
-16 for....in
+16. ForEach
 
-17 .map()
+17. .filter
 
-18. ForEach
+18. FInd and Find Index -> Array
 
-19 .filter
+19. Array concat()
 
-20. FInd and Find Index -> Array
+20. Dot notation vs []
 
-21. Array concat()
+21. Object vs array
+
+22. for...in
+
 
 
 //------------------------
@@ -80,7 +83,7 @@
 
 
 
-
+1.
 ///ternary expression -> Google Search
 //--- Static Method -> Method which is not attached to single instance
 
@@ -88,7 +91,7 @@
 
 
 
-
+2.
 //ECMAScript 6 Variable Scope
 //------------
 //****---****---
@@ -104,7 +107,7 @@ When called as an unbound function, this will default to the global context or w
 
 
 
-
+3.
 //Slice Method vs Splice method
 //--------------
 //****---****---
@@ -170,9 +173,6 @@ console.log(array2.slice(-3,-1));
 
 console.log(array2);
 // shows [6, 7, 8, 9, 0]
-
-
-
 //------------------------
 //------------------------
 //------------------------
@@ -180,7 +180,7 @@ console.log(array2);
 
 
 
-
+4.
 //arrow function
 //--------------
 //****---****---
@@ -293,7 +293,7 @@ Person.prototype.name = function() {
 
 
 
-
+5.
 //Class in Javascript
 //-------
 //****---****---
@@ -451,7 +451,7 @@ Note:
 
 
 
-
+6.
 //New Operator
 //------------
 //****---****---
@@ -485,7 +485,7 @@ sortArgs(1, 2, 3)
 
 
 
-
+7.
 //Destructuring
 //------------
 //****---****---
@@ -533,7 +533,7 @@ console.log(num1, num3)
 
 
 
-
+8.
 //In operator in Javascript
 //-------------
 //The in operator returns true if the specified property is in the specified object or its prototype chain.
@@ -559,7 +559,7 @@ console.log(car.make); //Suzuki
 
 
 
-
+9.
 //Instance and object
 //---------------
 //----**-----**---
@@ -577,7 +577,7 @@ console.log(car.make); //Suzuki
 
 
 
-
+10.
 //Static vs Instance Method
 //--------------
 //----**-----**---
@@ -605,7 +605,7 @@ obj.nonstaticMethod();//Refer to the instance's class's code
 
 
 
-
+11.
 //Prototypal Inheritance
 //----------------------
 //----**-----**-----**--
@@ -688,7 +688,7 @@ quare.area();
 
 
 
-
+12.
 //Bind()
 //------
 //---***---***---
@@ -719,7 +719,7 @@ boundGetX(); // 81
 
 
 
-
+13.
 //Partially Applied function
 //--------
 //------------------------
@@ -727,7 +727,7 @@ boundGetX(); // 81
 //------------------------
 
 
-
+14.
 .map method
 //------
 //---***---***---
@@ -773,7 +773,7 @@ var doubles = numbers.map(function(num) {
 
 
 
-
+15.
 Object.keys
 //------
 //---***---***---
@@ -802,7 +802,7 @@ console.log(Object.keys(myObj)); // console: ['foo']
 //------------------------
 
 
-
+16.
  ForEach
 //------
 //---***---***---
@@ -833,7 +833,7 @@ More: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_O
 
 
 
-
+17.
 .filter()
 //------
 //---***---***---
@@ -911,7 +911,7 @@ console.log(filterItems('an')); // ['banana', 'mango', 'orange']
 
 
 
-
+18.
 .reduce()
 //------
 //---***---***---
@@ -973,7 +973,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 
 
-
+19.
 Array concat()
 //------
 //---***---***---
@@ -982,3 +982,37 @@ var hege = ["Cecilie", "Lone"];
 var stale = ["Emil", "Tobias", "Linus"];
 var children = hege.concat(stale);
 // ["Cecilie", "Lone", "Emil", "Tobias", "Linus"]
+//------------------------
+//------------------------
+//------------------------
+
+
+
+20.
+dot notation vs []
+//---------
+//-----****----****---
+The bracket notation allows you to access properties by name stored in a variable:
+var obj = { "abc" : "hello" };
+var x = "abc";
+var y = obj[x];
+console.log(y); //output - hello
+
+obj.x would not work in this case.
+
+To read more
+https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/4392660
+//------------------------
+//------------------------
+//------------------------
+
+
+
+21
+Object vs array
+//---------
+//-----****----****---
+const myArray = []; is = const myArray = Array();
+const myArray = new Array(5);    myArray is an array of five undefined array items.
+The top answer highlighted this as a key point to share the difference between an array and object
+Arrays are for numerically indexed data - for non-numeric keys, use an Object.

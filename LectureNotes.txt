@@ -9,8 +9,11 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/t/lecture/810
 //if we import react, can we use jsx anywhere?
 //we can also add state using constructor(Props), super(props); this.state (this because we are inside a method)
 //Burger project lecture 11 to know how to pass states to functional component
+
+//Burger Ingrident safe guarding.
 https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/3956582
-https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/4316856
+
+More on CSS Modules
 https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/t/lecture/8111608
 
 //Question.
@@ -248,6 +251,50 @@ console.log(DisplayIngre)
 //This looks something like this
 //{ controls.map(el =>(<BuildControl key={el.label} label={el.label} />))}
 //We use key since it is an array at it would be unique here and label is passed to the child component
+//-------------------
+//-------------------
+//-------------------
+
+
+
+
+//Lecture 15
+//Connecting states to the build-controls
+//-------
+addIngredientHandler = (type) => {
+const oldCount = this.state.ingredient[type] //this shold log the value or the property next to it. for example 1 or 2
+const updatedCount = oldCount + 1; //this should add one to whatever the count is
+let updatedIngridents = {
+  ...this.state.ingredient
+};
+updatedIngridents[type] = updatedCount;
+const ingredientPrice = INGREDIENT_PRICE[type]
+const  totalPrice = this.state[totalPrice]
+const newPrice = totalPrice + ingredientPrice
+this.setState({totalPrice: newPrice, ingredient: updatedIngridents});
+
+//Here we get type when we call it from burger-controls
+//const oldCount = this.state.ingredient[type] //this should log the value or the property next to it. for example 1 or 2
+//const updatedCount = oldCount + 1; //this should add one to whatever the count is
+//We make a copy of updatedIngridents in the next line
+//updatedIngridents[type] = updatedCount; //This will update the key value of the object
+const ingredientPrice = INGREDIENT_PRICE[type] //
+//INGRIDENT PRICE is a global object which contains price of everything
+//const  totalPrice = this.state.totalPrice -> will set the total price in our states
+//const newPrice = totalPrice + ingredientPrice -> adds the cost of component to the total value
+//this.setState({totalPrice: newPrice, ingredient: updatedIngridents}); -> Updates the state
+
+//Then inside burgerBuilder
+//we do something like this
+<BuildControls
+ingridentAdded={this.addIngredientHandler}/>
+//to pass our addIngredientHandler
+
+//Inside build-controls.js
+//We pass the types which our app needs like this
+ingridentAdded={() => props.ingridentAdded(el.type)}
+//We get el.type from the const controls we created
+//We send this to build-control and pass it as an onClick event
 //-------------------
 //-------------------
 //-------------------
