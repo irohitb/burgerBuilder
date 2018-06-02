@@ -18,6 +18,7 @@ const buildControls = (props) => {
        key={el.label}
        label={el.label}
        ingridentAdded={() => props.ingridentAdded(el.type)}
+       removeIngredientHandler={() => props.removeIngredientHandler(el.type)}
       />))}
   </div>
  )
