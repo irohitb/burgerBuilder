@@ -63,7 +63,7 @@ removeIngredientHandler = (type) => {
     }
     console.log("yoyo", disabledInfo)
       for (let key in disabledInfo) {
-        disabledInfo[key] = disabledInfo[key] >= 1
+        disabledInfo[key] = disabledInfo[key] >= 0
       }
 
 
