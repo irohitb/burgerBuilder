@@ -298,3 +298,21 @@ ingridentAdded={() => props.ingridentAdded(el.type)}
 //-------------------
 //-------------------
 //-------------------
+
+
+[Add a note about what happens inside burger ingredients -> https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/4401532]
+
+
+//Lecture 16
+//Removing and disabling button
+//We did copied most of our code which we used above and changed const updatedCount = oldCount + 1; to const updatedCount = oldCount - 1; and const newPrice = totalPrice - ingredientPrice
+//Now we want to disable the button if we have less than zero or zero keyValue pair
+//For that we create a copy of our state.ingredients and call it disabledInfo inside our render method
+//Then we use from in loop (for (key in disableinfo)) and then disableInfo[key] = disableInfo[key] <= 0
+//Here it the latter disableInfor[key] if is greater than or equal to zero, it will set the value to true else fall
+//we pass it like this  disabled={disabledInfo}/>
+//In our   build-controls, we add  disabled={props.disabled[el.type]} -> here the key value pair would be either true or false now -> Since we copied this.state.ingrident to disableInfo and then changed the keyValue pair to true or false and then pass this to buildcontrols (this won't change our state)
+//We pass it build-control and hence if the key value pair will be true, the button will be disabled
+//-------------------
+//-------------------
+//-------------------

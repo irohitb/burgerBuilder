@@ -1016,3 +1016,23 @@ const myArray = []; is = const myArray = Array();
 const myArray = new Array(5);    myArray is an array of five undefined array items.
 The top answer highlighted this as a key point to share the difference between an array and object
 Arrays are for numerically indexed data - for non-numeric keys, use an Object.
+//------------------------
+//------------------------
+//------------------------
+
+
+
+22.
+for in javascript
+//---------
+//-----****----****---
+var obj = {a: 1, b: 2, c: 3};
+
+for (const prop in obj) {
+  console.log(`obj.${prop} = ${obj[prop]}`);
+}
+
+// Output:
+// "obj.a = 1"
+// "obj.b = 2"
+// "obj.c = 3"

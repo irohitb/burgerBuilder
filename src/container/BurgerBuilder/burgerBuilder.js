@@ -22,39 +22,58 @@ state = {
   }
 
 addIngredientHandler = (type) => {
+
   console.log(type)
   const oldCount = this.state.ingredient[type] //this shold log the value or the property next to it. for example 1 or 2
   const updatedCount = oldCount + 1; //this should add one to whatever the count is
-  let updatedIngridents = {
+  let updatedingredients = {
     ...this.state.ingredient
   };
-  updatedIngridents[type] = updatedCount;
+  updatedingredients[type] = updatedCount;
   const ingredientPrice = INGREDIENT_PRICE[type]
   const  totalPrice = this.state.totalPrice
   const newPrice = totalPrice + ingredientPrice
-  this.setState({totalPrice: newPrice, ingredient: updatedIngridents});
+  this.setState({totalPrice: newPrice, ingredient: updatedingredients});
 }
 
+
+
 removeIngredientHandler = (type) => {
+
   const oldCount = this.state.ingredient[type]
+  if (oldCount <= 0) {
+    //Our code works without this as well
+    return;
+  }
   const updatedCount = oldCount - 1;
-  let updatedIngridents = {
+  let updatedingredients = {
     ...this.state.ingredient
   };
-  updatedIngridents[type] = updatedCount;
+  updatedingredients[type] = updatedCount;
   const ingredientPrice = INGREDIENT_PRICE[type]
   const  totalPrice = this.state.totalPrice
   const newPrice = totalPrice - ingredientPrice
-  this.setState({totalPrice: newPrice, ingredient: updatedIngridents});
+  this.setState({totalPrice: newPrice, ingredient: updatedingredients});
 
 }
 
   render () {
+    const disabledInfo = {
+      ...this.state.ingredient
+    }
+    console.log("yoyo", disabledInfo)
+      for (let key in disabledInfo) {
+        disabledInfo[key] = disabledInfo[key] >= 1
+      }
+
+
+
     return (
         <Aux>
           <Burger ingredient={this.state.ingredient}/>
            <BuildControls
-           ingridentAdded={this.addIngredientHandler} removeIngredientHandler={this.removeIngredientHandler}/>
+           ingredientAdded={this.addIngredientHandler} removeIngredientHandler={this.removeIngredientHandler}
+           disabled={disabledInfo}/>
         </Aux>
     )
   }
