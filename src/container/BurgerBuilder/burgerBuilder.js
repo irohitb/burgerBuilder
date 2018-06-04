@@ -61,9 +61,10 @@ removeIngredientHandler = (type) => {
     const disabledInfo = {
       ...this.state.ingredient
     }
-    console.log("yoyo", disabledInfo)
+
       for (let key in disabledInfo) {
-        disabledInfo[key] = disabledInfo[key] >= 0
+
+        disabledInfo[key] = disabledInfo[key] <= 0
       }
 
 
@@ -72,6 +73,7 @@ removeIngredientHandler = (type) => {
         <Aux>
           <Burger ingredient={this.state.ingredient}/>
            <BuildControls
+           price={this.state.totalPrice.toFixed(2)}
            ingredientAdded={this.addIngredientHandler} removeIngredientHandler={this.removeIngredientHandler}
            disabled={disabledInfo}/>
         </Aux>

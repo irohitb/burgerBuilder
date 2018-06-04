@@ -14,6 +14,7 @@ const buildControls = (props) => {
   console.log("yahoo",props.disabled)
   return (
   <div className={Classes.BuildControls}>
+    <p> Your current Price is $ {props.price} </p>
     { controls.map(el =>(
       <BuildControl
        key={el.label}

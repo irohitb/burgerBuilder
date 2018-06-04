@@ -302,9 +302,24 @@ ingridentAdded={() => props.ingridentAdded(el.type)}
 
 [Add a note about what happens inside burger ingredients -> https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/4401532]
 
+MLR — Teaching Assistant  · a day ago  Answer
+Hi Rohit,  The general logic is:
+#1)  Click the More (button) inside the BuildControl component > onClick={props.added}
+#2)  BuildControls component > added={()=>props.ingredientAdded(ctrl.type)}
+#3)  BurgerBuilder component > ingredientAdded={this.addIngredientHandler}
+#4)  addIngredientHandler (method) > this.setState({totalPrice: newPrice, ingredients: updatedIngredients});
+#5)  The state has been altered.
+#6)  <Burger ingredients={this.state.ingredients} />
+#7)  Burger component > Object.keys( ... ... The burger ingredients are processed.
+//-------------------
+//-------------------
+//-------------------
+
+
 
 //Lecture 16
 //Removing and disabling button
+//-------
 //We did copied most of our code which we used above and changed const updatedCount = oldCount + 1; to const updatedCount = oldCount - 1; and const newPrice = totalPrice - ingredientPrice
 //Now we want to disable the button if we have less than zero or zero keyValue pair
 //For that we create a copy of our state.ingredients and call it disabledInfo inside our render method
@@ -313,6 +328,16 @@ ingridentAdded={() => props.ingridentAdded(el.type)}
 //we pass it like this  disabled={disabledInfo}/>
 //In our   build-controls, we add  disabled={props.disabled[el.type]} -> here the key value pair would be either true or false now -> Since we copied this.state.ingrident to disableInfo and then changed the keyValue pair to true or false and then pass this to buildcontrols (this won't change our state)
 //We pass it build-control and hence if the key value pair will be true, the button will be disabled
+//-------------------
+//-------------------
+//-------------------
+
+
+//Lecture 17
+//-------
+//We added price in this lecture
+//Passed it to the burger-controls like form burgerBuilder.js like -> price={this.state.totalPrice.toFixed(2)} (to fix it to decimal places)
+//ABove map, we did something like this <p> Your current price is {props.price}</p>
 //-------------------
 //-------------------
 //-------------------
