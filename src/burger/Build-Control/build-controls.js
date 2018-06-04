@@ -11,6 +11,7 @@ const controls = [
 
 
 const buildControls = (props) => {
+  console.log('HELLP',props.checkHandler)
   console.log("yahoo",props.disabled)
   return (
   <div className={Classes.BuildControls}>
@@ -23,6 +24,7 @@ const buildControls = (props) => {
        removeIngredientHandler={() => props.removeIngredientHandler(el.type)}
        disabled={props.disabled[el.type]}
       />))}
+      <button className={Classes.OrderButton} disabled={props.checkHandler}>Check </button>
   </div>
  )
 };

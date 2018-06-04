@@ -10,6 +10,8 @@ const INGREDIENT_PRICE = {
   meat: 0.8
 }
 
+let purchasable = false;
+
 class BurgerBuilder extends Component {
 state = {
     ingredient: {
@@ -20,6 +22,8 @@ state = {
     },
     totalPrice: 4
   }
+
+
 
 addIngredientHandler = (type) => {
 
@@ -54,8 +58,11 @@ removeIngredientHandler = (type) => {
   const  totalPrice = this.state.totalPrice
   const newPrice = totalPrice - ingredientPrice
   this.setState({totalPrice: newPrice, ingredient: updatedingredients});
-
 }
+
+
+
+
 
   render () {
     const disabledInfo = {
@@ -63,11 +70,16 @@ removeIngredientHandler = (type) => {
     }
 
       for (let key in disabledInfo) {
-
         disabledInfo[key] = disabledInfo[key] <= 0
+        console.log(disabledInfo[key])
       }
 
-
+      if (this.state.totalPrice == 4) {
+        purchasable = true;
+        console.log("tt:",purchasable)
+      } else {
+        purchasable = false;
+      }
 
     return (
         <Aux>
@@ -75,7 +87,8 @@ removeIngredientHandler = (type) => {
            <BuildControls
            price={this.state.totalPrice.toFixed(2)}
            ingredientAdded={this.addIngredientHandler} removeIngredientHandler={this.removeIngredientHandler}
-           disabled={disabledInfo}/>
+           disabled={disabledInfo}
+           checkHandler={purchasable}/>
         </Aux>
     )
   }

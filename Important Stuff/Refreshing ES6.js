@@ -6,6 +6,7 @@
 
 ////Note: objects and array are reference type
 /// To read object Destruction, Reference in primative type
+///We can't use if-statements and variables directly inside the class
 
 
 //-------------

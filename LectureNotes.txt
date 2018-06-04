@@ -334,10 +334,23 @@ Hi Rohit,  The general logic is:
 
 
 //Lecture 17
+//Adding price
 //-------
 //We added price in this lecture
 //Passed it to the burger-controls like form burgerBuilder.js like -> price={this.state.totalPrice.toFixed(2)} (to fix it to decimal places)
 //ABove map, we did something like this <p> Your current price is {props.price}</p>
+//-------------------
+//-------------------
+//-------------------
+
+
+//Lecture 18
+//Adding the order button
+//-------
+//Custom
+//We created the order button using the button tag, we added its css
+//then we put up if condition where if the price is 4 then it will change disability of button to true and the moment it changes to something other than 4 (since 4 is the base Price)
+//it will change the disabled to true or false
 //-------------------
 //-------------------
 //-------------------
