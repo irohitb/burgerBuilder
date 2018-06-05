@@ -347,10 +347,17 @@ Hi Rohit,  The general logic is:
 //Lecture 18
 //Adding the order button
 //-------
-//Custom
+//Custom Method
 //We created the order button using the button tag, we added its css
 //then we put up if condition where if the price is 4 then it will change disability of button to true and the moment it changes to something other than 4 (since 4 is the base Price)
 //it will change the disabled to true or false
+
+Max Method
+//Rewatch
+//we added new state "purchasable" which is intially false and created a new method purchasableHandle
+//we check if the keyValue is everywhere zero by doing object keys followed by object map and then reduce method
+//Object keys create an array of salad and everything, map will display the keyValue -> reduce will add everything, then we check if the sum is greater than 0 or not -> if greater than zero condtion is false
+//We want this method to be executed whenever
 //-------------------
 //-------------------
 //-------------------
