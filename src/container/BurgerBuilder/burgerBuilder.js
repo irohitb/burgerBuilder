@@ -10,7 +10,7 @@ const INGREDIENT_PRICE = {
   meat: 0.8
 }
 
-let purchasable = false;
+//let purchasable = false;
 
 class BurgerBuilder extends Component {
 state = {
@@ -20,13 +20,27 @@ state = {
       cheese: 0,
       meat: 0
     },
-    totalPrice: 4
+    totalPrice: 4,
+    purchasable: false
+  }
+
+purchasableHandle = (ingredient) => {
+  let ppurchasable = Object.keys(ingredient) // this should log ["salad",'bacon','cheese']
+  ppurchasable = ppurchasable.map((el) => {
+    return ingredient[el] //this shoudl log ("0", "0", "0")
+  })
+  ppurchasable = ppurchasable.reduce((total, amount) => {
+
+     return total+amount;
+  },0);
+  console.log("Purchasable sum", ppurchasable)
+  this.setState({purchasable: ppurchasable > 0});
+  console.log(this.state.purchasable)
   }
 
 
 
 addIngredientHandler = (type) => {
-
   console.log(type)
   const oldCount = this.state.ingredient[type] //this shold log the value or the property next to it. for example 1 or 2
   const updatedCount = oldCount + 1; //this should add one to whatever the count is
@@ -38,6 +52,8 @@ addIngredientHandler = (type) => {
   const  totalPrice = this.state.totalPrice
   const newPrice = totalPrice + ingredientPrice
   this.setState({totalPrice: newPrice, ingredient: updatedingredients});
+  this.purchasableHandle(updatedingredients)
+  console.log("Add Ingredient", this.state.purchasable)
 }
 
 
@@ -58,6 +74,8 @@ removeIngredientHandler = (type) => {
   const  totalPrice = this.state.totalPrice
   const newPrice = totalPrice - ingredientPrice
   this.setState({totalPrice: newPrice, ingredient: updatedingredients});
+    this.purchasableHandle(updatedingredients)
+    console.log("remove Ingredient", this.state.purchasable)
 }
 
 
@@ -65,21 +83,21 @@ removeIngredientHandler = (type) => {
 
 
   render () {
+
     const disabledInfo = {
       ...this.state.ingredient
     }
 
       for (let key in disabledInfo) {
         disabledInfo[key] = disabledInfo[key] <= 0
-        console.log(disabledInfo[key])
       }
 
-      if (this.state.totalPrice == 4) {
-        purchasable = true;
-        console.log("tt:",purchasable)
-      } else {
-        purchasable = false;
-      }
+  //    if (this.state.totalPrice == 4) {
+  //      purchasable = true;
+  //      console.log("tt:",purchasable)
+  //    } else {
+  //      purchasable = false;
+  //    }
 
     return (
         <Aux>
@@ -88,7 +106,7 @@ removeIngredientHandler = (type) => {
            price={this.state.totalPrice.toFixed(2)}
            ingredientAdded={this.addIngredientHandler} removeIngredientHandler={this.removeIngredientHandler}
            disabled={disabledInfo}
-           checkHandler={purchasable}/>
+           purchasableHandler={this.state.purchasable} />
         </Aux>
     )
   }

@@ -7,7 +7,7 @@
 ////Note: objects and array are reference type
 /// To read object Destruction, Reference in primative type
 ///We can't use if-statements and variables directly inside the class
-
+//A constructor being used inside the class is called using this.construcor name (rember inheritance and rendering is inside a class)
 
 //-------------
 // Index
@@ -59,6 +59,8 @@
 16. ForEach
 
 17. .filter
+
+18. reduce()
 
 18. FInd and Find Index -> Array
 
@@ -913,17 +915,17 @@ console.log(filterItems('an')); // ['banana', 'mango', 'orange']
 
 
 18.
-.reduce()
+.disabledInfo()
 //------
 //---***---***---
 
 const euros = [29.76, 41.85, 46.5];
-const sum = euros.reduce((total, amount) => total + amount);
+const sum = euros.disabledInfo((total, amount) => total + amount);
 sum // 118.11
 
 
 In this example,
-Reduce accepts two parameters, the total and the current amount.
+disabledInfo accepts two parameters, the total and the current amount.
 The reduce method cycles through each number in the array much like it would in a for-loop.
 When the loop starts the total value is the number on the far left (29.76) and the current amount is the one next to it (41.85).
 In this particular example, we want to add the current amount to the total.

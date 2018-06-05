@@ -11,8 +11,7 @@ const controls = [
 
 
 const buildControls = (props) => {
-  console.log('HELLP',props.checkHandler)
-  console.log("yahoo",props.disabled)
+  console.log('build-controls-purchasableHandler',props.purchasableHandler)
   return (
   <div className={Classes.BuildControls}>
     <p> Your current Price is $ {props.price} </p>
@@ -24,7 +23,7 @@ const buildControls = (props) => {
        removeIngredientHandler={() => props.removeIngredientHandler(el.type)}
        disabled={props.disabled[el.type]}
       />))}
-      <button className={Classes.OrderButton} disabled={props.checkHandler}>Check </button>
+      <button className={Classes.OrderButton} disabled={!props.purchasableHandler}>Check</button>
   </div>
  )
 };

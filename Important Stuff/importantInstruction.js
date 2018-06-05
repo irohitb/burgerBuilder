@@ -14,6 +14,14 @@ In react
 //-------------
 
 
+//Errors
+if you get an error which states something like this
+"Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops."
+This means we might be calling something in render i.e  you call some method in render() which does (indirectly) update the state via setState(), you enter an infinite loop because an updated state will call render() and vice versa.
+
+
+
+
 //-----Index-----------//
 
 1. Props
