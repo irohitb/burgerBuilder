@@ -23,7 +23,8 @@ state = {
       meat: 0
     },
     totalPrice: 4,
-    purchasable: false
+    purchasable: false,
+    purchasing: false
   }
 
 purchasableHandle = (ingredient) => {
@@ -80,7 +81,9 @@ removeIngredientHandler = (type) => {
     console.log("remove Ingredient", this.state.purchasable)
 }
 
-
+purchasingHandler = () => {
+  this.setState({purchasing: true})
+}
 
 
 
@@ -103,7 +106,7 @@ removeIngredientHandler = (type) => {
 
     return (
         <Aux>
-          <Modal>
+          <Modal order={this.state.purchasing}>
           <OrderSummary ingredient={this.state.ingredient}/>
           </Modal>
           <Burger ingredient={this.state.ingredient}/>
@@ -111,6 +114,7 @@ removeIngredientHandler = (type) => {
            price={this.state.totalPrice.toFixed(2)}
            ingredientAdded={this.addIngredientHandler} removeIngredientHandler={this.removeIngredientHandler}
            disabled={disabledInfo}
+           purchasingHandler={this.purchasingHandler}
            purchasableHandler={this.state.purchasable} />
         </Aux>
     )

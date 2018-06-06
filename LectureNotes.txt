@@ -366,10 +366,24 @@ Max Method
 
 //Lecture 19
 //Creating the order summary
+//-------
 //We created  folders in component  1. UI, Order Summary. Inside UI we created two folders -> Backdrop and Modal
 //Modal creates a simple box in between the orderSummary is shown, we also added Model.CSS
 //We imported Modal in BurgerBuilder and since We want order summary to be inside modal, we wrappped it inside Modal tag
 //We passed the ingrident prop to ordersummary, used object.keys and then used .map to get ingredient and its summary (orderSummary is wrapped with AUx)
+//-------------------
+//-------------------
+//-------------------
+
+
+//lecture 20
+//-------
+//Showing  and Hiding Modal
+//We added purchasing into state which is intially set to false
+//Purchasing is set to true when we click on order button for this we created purchasingHandler()
+// we pass this state to modal and whenever this state is true it will make the box true
+//Inside Modal we use ternary expression to determine if true and false and change style accordingly
+//For example -> <div className={Classes.Modal} style={{display: props.order ? 'block' : 'none'}}>
 //-------------------
 //-------------------
 //-------------------
