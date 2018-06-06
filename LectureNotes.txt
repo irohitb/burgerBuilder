@@ -355,9 +355,21 @@ Hi Rohit,  The general logic is:
 Max Method
 //Rewatch
 //we added new state "purchasable" which is intially false and created a new method purchasableHandle
-//we check if the keyValue is everywhere zero by doing object keys followed by object map and then reduce method
+//we create a constant ppurchasable and check if the keyValue is everywhere zero by doing object keys followed by object map and then reduce method
 //Object keys create an array of salad and everything, map will display the keyValue -> reduce will add everything, then we check if the sum is greater than 0 or not -> if greater than zero condtion is false
-//We want this method to be executed whenever
+//We want this method to be executed whenever we add ingredient or remove an ingredient so we call it from those method
+//We also pass ingrident as a argument to this handler to make sure we always have latest state
+//-------------------
+//-------------------
+//-------------------
+
+
+//Lecture 19
+//Creating the order summary
+//We created  folders in component  1. UI, Order Summary. Inside UI we created two folders -> Backdrop and Modal
+//Modal creates a simple box in between the orderSummary is shown, we also added Model.CSS
+//We imported Modal in BurgerBuilder and since We want order summary to be inside modal, we wrappped it inside Modal tag
+//We passed the ingrident prop to ordersummary, used object.keys and then used .map to get ingredient and its summary (orderSummary is wrapped with AUx)
 //-------------------
 //-------------------
 //-------------------
