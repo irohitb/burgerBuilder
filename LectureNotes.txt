@@ -384,6 +384,7 @@ Max Method
 // we pass this state to modal and whenever this state is true it will make the box true
 //Inside Modal we use ternary expression to determine if true and false and change style accordingly
 //For example -> <div className={Classes.Modal} style={{display: props.order ? 'block' : 'none'}}>
+//If we use purchasableHandler like this purchasable() and then do something like this.setState, it won't be pointing to the state because of the scope of this.. hence we need to use ES6 arrow function
 //-------------------
 //-------------------
 //-------------------
