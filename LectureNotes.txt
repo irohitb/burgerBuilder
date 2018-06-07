@@ -5,16 +5,16 @@ Note: In Index.css we setup global body style since rendor starts from Index.js 
 //IF we have two adjacent jsx element (we can't have), We have to use array and give each item a key
 //Another alternate is create HOC -> It will server purpose of wrapping something and passing function
 //Question to ask, Why didn't we used div?
-https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/t/lecture/8109010?start=0
+https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/t/commit/8109010?start=0
 //if we import react, can we use jsx anywhere?
 //we can also add state using constructor(Props), super(props); this.state (this because we are inside a method)
-//Burger project lecture 11 to know how to pass states to functional component
+//Burger project commit 11 to know how to pass states to functional component
 
 //Burger Ingrident safe guarding.
 https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/3956582
 
 More on CSS Modules
-https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/t/lecture/8111608
+https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/t/commit/8111608
 
 //Question.
 //When we console.log(typeof array) -> Does it always logs it as an object
@@ -28,7 +28,7 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/t/lecture/811
 
 
 
-//Lecture 5
+//commit 5
 //Css -> Npm run eject -> webpack -> Options
 //Removed logo
 //Removed most of the content from App.js
@@ -42,7 +42,7 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/t/lecture/811
 
 
 
-//lecture 6
+//commit 6
 //We can seperate our project into two parts
 //Toolbar to navigate and the main burger builder
 //We create a sub folder for layout
@@ -63,7 +63,7 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/t/lecture/811
 
 
 
-//Lecture 7
+//commit 7
 //Starting the implementation of the burger builder
 //---x-x----x--x---
 //This should actually be a container because here we need to manage the state of burger
@@ -82,7 +82,7 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/t/lecture/811
 
 
 
-//Lecture 8
+//commit 8
 //Adding DYnamic ingredient components
 //---x----x-----x---
 //We would add burger needed component and ingredients
@@ -100,7 +100,7 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/t/lecture/811
 
 
 
-//Lecture 9
+//commit 9
 //Props Valiadtion
 //--x--x----x--
 //Added Props Validation
@@ -112,7 +112,7 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/t/lecture/811
 
 
 
-//Lecture 10
+//commit 10
 //Starting the burger Component
 //---x----x---
 //In burger.js, we created a functional component which receives some props
@@ -130,7 +130,7 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/t/lecture/811
 
 
 
-Lecture 11
+commit 11
 //Outputting burger ingredient Dynamically
 //----x-----x----
 //We will add state, state is an object (in max tutorial) -> max
@@ -182,7 +182,7 @@ DisplayIngre.push(<BurgerIngredients type={igKey} key={i+j} />);
 
 
 
-Lecture 12
+commit 12
 //Calculating the ingredient sum dynamically
 //--------
 //Max code
@@ -227,7 +227,7 @@ console.log(DisplayIngre)
 
 
 
-//Lecture 13
+//commit 13
 //Adding Building control Component
 //-----------
 //Here we created a folder from user can add or remove components
@@ -242,10 +242,10 @@ console.log(DisplayIngre)
 
 
 
-//Lecture 14
+//commit 14
 //Outputting multiple Build Controls
 //---------
-//In this lecture we created an array of object where we added the label and and type.
+//In this commit we created an array of object where we added the label and and type.
 //Inside parent Build-control, we import child build-controls
 //We pass this array to child build-controls using map method
 //This looks something like this
@@ -258,7 +258,7 @@ console.log(DisplayIngre)
 
 
 
-//Lecture 15
+//commit 15
 //Connecting states to the build-controls
 //-------
 addIngredientHandler = (type) => {
@@ -317,7 +317,7 @@ Hi Rohit,  The general logic is:
 
 
 
-//Lecture 16
+//commit 16
 //Removing and disabling button
 //-------
 //We did copied most of our code which we used above and changed const updatedCount = oldCount + 1; to const updatedCount = oldCount - 1; and const newPrice = totalPrice - ingredientPrice
@@ -333,10 +333,10 @@ Hi Rohit,  The general logic is:
 //-------------------
 
 
-//Lecture 17
+//commit 17
 //Adding price
 //-------
-//We added price in this lecture
+//We added price in this commit
 //Passed it to the burger-controls like form burgerBuilder.js like -> price={this.state.totalPrice.toFixed(2)} (to fix it to decimal places)
 //ABove map, we did something like this <p> Your current price is {props.price}</p>
 //-------------------
@@ -344,7 +344,7 @@ Hi Rohit,  The general logic is:
 //-------------------
 
 
-//Lecture 18
+//commit 18
 //Adding the order button
 //-------
 //Custom Method
@@ -364,7 +364,7 @@ Max Method
 //-------------------
 
 
-//Lecture 19
+//commit 19
 //Creating the order summary
 //-------
 //We created  folders in component  1. UI, Order Summary. Inside UI we created two folders -> Backdrop and Modal
@@ -376,7 +376,7 @@ Max Method
 //-------------------
 
 
-//lecture 20
+//commit 20
 //-------
 //Showing  and Hiding Modal
 //We added purchasing into state which is intially set to false
@@ -385,6 +385,21 @@ Max Method
 //Inside Modal we use ternary expression to determine if true and false and change style accordingly
 //For example -> <div className={Classes.Modal} style={{display: props.order ? 'block' : 'none'}}>
 //If we use purchasableHandler like this purchasable() and then do something like this.setState, it won't be pointing to the state because of the scope of this.. hence we need to use ES6 arrow function
+//-------------------
+//-------------------
+//-------------------
+
+
+//Commit 22 (21)
+//------
+//Implementing the Backdrop Component
+//We created a backdrop folder having Backdrop.js and backdrop.css
+//Backdrop is used to..
+//We wrapped Model with Aux and then imported Backdrop.js file making modal as parent
+//Order summary passes the prop through which backdrop adds its own styling when purchasable is true
+//We also added purchasblecloseHandler which is bassed from BurgerBuilder to modal to Backdrop
+//When purchasable state is true, meaning when we click on order now, an order popup summary opens
+//The purchasableHandlerClose will close it whenever we click anywhere on the screen by setting it to false
 //-------------------
 //-------------------
 //-------------------

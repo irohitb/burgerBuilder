@@ -5,6 +5,7 @@ import BuildControls from '../../component/burger/Build-Control/build-controls.j
 import Modal from '../../component/UI/modal/modal'
 import OrderSummary from '../../component/order-summary/ordersummary.js'
 
+
 const INGREDIENT_PRICE = {
   salad: 0.5,
   cheese: 0.3,
@@ -81,10 +82,13 @@ removeIngredientHandler = (type) => {
     console.log("remove Ingredient", this.state.purchasable)
 }
 
-purchasingHandler = () => {
+purchasingHandlerOpen =  () =>  {
   this.setState({purchasing: true})
 }
 
+purchasingHandlerClose = () => {
+  this.setState({purchasing: false})
+}
 
 
   render () {
@@ -106,7 +110,7 @@ purchasingHandler = () => {
 
     return (
         <Aux>
-          <Modal order={this.state.purchasing}>
+          <Modal order={this.state.purchasing} purchasingHandlerClose={this.purchasingHandlerClose}>
           <OrderSummary ingredient={this.state.ingredient}/>
           </Modal>
           <Burger ingredient={this.state.ingredient}/>
@@ -114,7 +118,7 @@ purchasingHandler = () => {
            price={this.state.totalPrice.toFixed(2)}
            ingredientAdded={this.addIngredientHandler} removeIngredientHandler={this.removeIngredientHandler}
            disabled={disabledInfo}
-           purchasingHandler={this.purchasingHandler}
+           purchasingHandlerOpen={this.purchasingHandlerOpen}
            purchasableHandler={this.state.purchasable} />
         </Aux>
     )

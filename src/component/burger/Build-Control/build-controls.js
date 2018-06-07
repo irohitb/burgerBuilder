@@ -23,7 +23,7 @@ const buildControls = (props) => {
        removeIngredientHandler={() => props.removeIngredientHandler(el.type)}
        disabled={props.disabled[el.type]}
       />))}
-      <button className={Classes.OrderButton} disabled={!props.purchasableHandler} onClick={props.purchasingHandler}>Order</button>
+      <button className={Classes.OrderButton} disabled={!props.purchasableHandler} onClick={props.purchasingHandlerOpen}>Order</button>
   </div>
  )
 };
