@@ -45,7 +45,7 @@ DisplayIngre.push(<BurgerIngredients type={igKey} key={igKey+i+j} />);
 
 
 if (DisplayIngre.length === 0) {
-DisplayIngre = <p> Kuch Nhi </p>
+DisplayIngre = <p> Add some ingredient to continue  </p>
 console.log(DisplayIngre)
 }
 

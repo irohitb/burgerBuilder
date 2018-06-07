@@ -441,3 +441,13 @@ Max Method
 //-------------------
 //-------------------
 //-------------------
+
+
+//Commit 26
+//-----
+//We made toolbar folder, added toolbar.js and toolbar.css file
+//Passed it to layout component (making layout the parent)
+//Added css properties to toolbar
+//-------------------
+//-------------------
+//-------------------
