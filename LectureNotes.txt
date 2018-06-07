@@ -407,11 +407,27 @@ Max Method
 
 //Commit 23
 //-----
-//Adding custom button component 
-//Since we are going to use button multiple times, we removed from OrderSummary and created a seperate component in UI (we created a button folder having its js file and CSS)
+//Adding custom button component
+//Since we are going to use button multiple times, we created a seperate component in UI (we created a button folder having its js file and CSS)
 //We passed the purchasingHandlerClose from BurgerIngredient to ordersummary to Button.js file
 //Button.js is child of ordersummary
 //In button we want to add multiple styling so we create an array, join and then convert to string
+//-------------------
+//-------------------
+//-------------------
+
+
+//Commit 24
+//-----
+//Implementing the button Component
+//We created a new handler the purchaseContinueHandler which just alerts something for the time being
+//We passed this handler and purchasblecloseHandler the orderSummary which is passed to button.
+//In button.js  we have.
+//className={[Classes.Button, Classes[props.btnType]].join(' ')} and onClick={props.clicked}>
+/Now there are many ways to get the props but one of the way is
+   <Button btnType="Danger"  clicked={props.purchasingHandlerClose}>Cancel </Button>
+   <Button btnType="Success"  clicked={props.purchaseContinueHandler}> Order</Button>
+//In above example if cancel Button would be clicked then btnType Danger would be passed and similarly props associated with clicked
 //-------------------
 //-------------------
 //-------------------

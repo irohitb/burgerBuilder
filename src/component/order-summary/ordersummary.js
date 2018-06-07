@@ -1,9 +1,9 @@
 import React from "react";
 import Aux from "../../HOC/Aux.js"
 import Button from "../UI/Button/button.js"
+
+
 const orderSummary = (props) => {
-
-
   const summary = Object.keys(props.ingredient) // [This should g
 
   return (
@@ -17,7 +17,10 @@ const orderSummary = (props) => {
       )}
       </ul>
         <p> Continue to Checkout?</p>
-        <Button purchasingHandlerClose={props.purchasingHandlerClose} />
+        <Button btnType="Danger"  clicked={props.purchasingHandlerClose}>Cancel </Button>
+        <Button btnType="Success"  clicked={props.purchaseContinueHandler}> Order</Button>
+
+
     </Aux>
   )
 

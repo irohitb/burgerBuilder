@@ -90,7 +90,9 @@ purchasingHandlerClose = () => {
   this.setState({purchasing: false})
 }
 
-
+purchaseContinueHandler = () => {
+  alert("You Continue")
+}
   render () {
 
     const disabledInfo = {
@@ -111,7 +113,7 @@ purchasingHandlerClose = () => {
     return (
         <Aux>
           <Modal order={this.state.purchasing} purchasingHandlerClose={this.purchasingHandlerClose}>
-          <OrderSummary ingredient={this.state.ingredient} purchasingHandlerClose={this.purchasingHandlerClose}/>
+          <OrderSummary ingredient={this.state.ingredient} purchasingHandlerClose={this.purchasingHandlerClose} purchaseContinueHandler={this.purchaseContinueHandler}/>
           </Modal>
           <Burger ingredient={this.state.ingredient}/>
            <BuildControls

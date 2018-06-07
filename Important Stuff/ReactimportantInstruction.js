@@ -59,7 +59,8 @@ This means we might be calling something in render i.e  you call some method in 
 
 17. Have multiple class name
 
-1
+18. Two Wrapper component(continutation of Multiple Classes)
+
 //React: Understanding Props
 //---xxx-----
 //Props are how components talk to each other.
@@ -513,6 +514,9 @@ const yell = PassedComponent =>
 //This would call yell with Title as argument
 //First yell console.log will execute (in line 5),
 //Then when we  do  <PassedComponent  -> Title will execute
+//-----x----x------x----x------x-
+//-----x------x------x----x------
+
 
 
 
@@ -521,4 +525,16 @@ Having Multiple ClassName in react
 // consider this
  className={[Classes.Button, Classes[props.btnType]].join(' ')}
 //Here we are getting first className from our .css and secon class name is passed to us
-//This is an array, Which is joined to make a string 
+//This is an array, Which is joined to make a string
+//-----x----x------x----x------x-
+//-----x------x------x----x------
+
+
+18. Multiple wrapped component
+//Refer to the commit 24 or Implementing the Burger Component lecture
+//In above example, we are getting our btnType from props  i.e
+ className={[Classes.Button, Classes[props.btnType]].join(' ')}
+//Now there are many ways to get the props but one of the way is
+    <Button btnType="Danger"  clicked={props.purchasingHandlerClose}>Cancel </Button>
+		<Button btnType="Success"  clicked={props.purchaseContinueHandler}> Order</Button>
+//In above example if cancel Button would be clicked then btnType Danger would be passed and similarly props associated with clicked
