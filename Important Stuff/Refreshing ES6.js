@@ -72,6 +72,7 @@
 
 22. for...in
 
+23 Array.join
 
 
 //------------------------
@@ -1039,3 +1040,18 @@ for (const prop in obj) {
 // "obj.a = 1"
 // "obj.b = 2"
 // "obj.c = 3"
+
+
+23
+Array.join
+The join() method joins all elements of an array (or an array-like object) into a string and returns this string.
+var elements = ['Fire', 'Wind', 'Rain'];
+
+console.log(elements.join());
+// expected output: Fire,Wind,Rain
+
+console.log(elements.join(''));
+// expected output: FireWindRain
+
+console.log(elements.join('-'));
+// expected output: Fire-Wind-Rain

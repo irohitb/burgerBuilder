@@ -403,3 +403,15 @@ Max Method
 //-------------------
 //-------------------
 //-------------------
+
+
+//Commit 23
+//-----
+//Adding custom button component 
+//Since we are going to use button multiple times, we removed from OrderSummary and created a seperate component in UI (we created a button folder having its js file and CSS)
+//We passed the purchasingHandlerClose from BurgerIngredient to ordersummary to Button.js file
+//Button.js is child of ordersummary
+//In button we want to add multiple styling so we create an array, join and then convert to string
+//-------------------
+//-------------------
+//-------------------

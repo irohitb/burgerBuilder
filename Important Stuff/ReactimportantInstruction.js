@@ -57,7 +57,7 @@ This means we might be calling something in render i.e  you call some method in 
 
 16. HOC examples
 
-
+17. Have multiple class name
 
 1
 //React: Understanding Props
@@ -516,4 +516,9 @@ const yell = PassedComponent =>
 
 
 
-//
+17.
+Having Multiple ClassName in react
+// consider this
+ className={[Classes.Button, Classes[props.btnType]].join(' ')}
+//Here we are getting first className from our .css and secon class name is passed to us
+//This is an array, Which is joined to make a string 
