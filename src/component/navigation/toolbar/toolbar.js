@@ -1,9 +1,12 @@
 import React from 'react';
 import Classes from './toolbar.css';
+import Logo from '../../logo/logo.js';
 
 const toolbar = (props) => {
   return (
-    <header className={Classes.Toolbar}> </header>
+    <header className={Classes.Toolbar}>
+    <Logo />
+    </header>
   )
 
 }

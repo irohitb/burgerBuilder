@@ -61,6 +61,8 @@ This means we might be calling something in render i.e  you call some method in 
 
 18. Two Wrapper component(continutation of Multiple Classes)
 
+19. Adding an image in React
+
 //React: Understanding Props
 //---xxx-----
 //Props are how components talk to each other.
@@ -530,7 +532,8 @@ Having Multiple ClassName in react
 //-----x------x------x----x------
 
 
-18. Multiple wrapped component
+18.
+Multiple wrapped component
 //Refer to the commit 24 or Implementing the Burger Component lecture
 //In above example, we are getting our btnType from props  i.e
  className={[Classes.Button, Classes[props.btnType]].join(' ')}
@@ -538,3 +541,28 @@ Having Multiple ClassName in react
     <Button btnType="Danger"  clicked={props.purchasingHandlerClose}>Cancel </Button>
 		<Button btnType="Success"  clicked={props.purchaseContinueHandler}> Order</Button>
 //In above example if cancel Button would be clicked then btnType Danger would be passed and similarly props associated with clicked
+//-----x----x------x----x------x-
+//-----x------x------x----x-----
+
+
+
+19.
+Adding an image in React
+import React from 'react';
+import Burgerlogo from '../../assests/burger-logo.png';
+import Classes from './logo.css';
+const logo = (props) => {
+  return (
+  <div className={Classes.logo}>
+    <img src={Burgerlogo} alt="MyBurger"/>
+  </div>
+  )
+}
+
+export default logo;
+
+//Here we imported BurgerLogo which is our image
+//then we passed it as src={BurgerLogo}
+//Note React automatically recognize .png as an image just like for CSS and when we pas BurgerLogo it would know that it is an image
+//-----x----x------x----x------x-
+//-----x------x------x----x-----

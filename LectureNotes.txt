@@ -445,9 +445,37 @@ Max Method
 
 //Commit 26
 //-----
+//Adding a toolbar
 //We made toolbar folder, added toolbar.js and toolbar.css file
 //Passed it to layout component (making layout the parent)
 //Added css properties to toolbar
 //-------------------
 //-------------------
 //-------------------
+
+
+//Commit 27
+//-----
+//Adding a log image
+//In this lecture we created a logo folder having logo.png and logo.css file
+//This is also a react component
+//we imported react and we imported location of image
+//Consider this
+
+import React from 'react';
+import Burgerlogo from '../../assests/burger-logo.png';
+import Classes from './logo.css';
+const logo = (props) => {
+  return (
+  <div className={Classes.logo}>
+    <img src={Burgerlogo} alt="MyBurger"/>
+  </div>
+  )
+}
+
+export default logo;
+
+//Here we imported BurgerLogo which is our image
+//then we passed it as src={BurgerLogo}
+//Note React automatically recognize .png as an image just like for CSS and when we pas BurgerLogo it would know that it is an image
+//We imported our logo in layout.js and in return statement we added our logo by just doing this <Logo />
