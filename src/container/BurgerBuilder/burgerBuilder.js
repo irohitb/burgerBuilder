@@ -113,7 +113,7 @@ purchaseContinueHandler = () => {
     return (
         <Aux>
           <Modal order={this.state.purchasing} purchasingHandlerClose={this.purchasingHandlerClose}>
-          <OrderSummary ingredient={this.state.ingredient} purchasingHandlerClose={this.purchasingHandlerClose} purchaseContinueHandler={this.purchaseContinueHandler}/>
+          <OrderSummary ingredient={this.state.ingredient} purchasingHandlerClose={this.purchasingHandlerClose} purchaseContinueHandler={this.purchaseContinueHandler} totalPrice={this.state.totalPrice}/>
           </Modal>
           <Burger ingredient={this.state.ingredient}/>
            <BuildControls

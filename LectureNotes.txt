@@ -431,3 +431,13 @@ Max Method
 //-------------------
 //-------------------
 //-------------------
+
+
+//Commit 25
+//----
+//Adding Price to order summary
+//Passed the price from BurgerBuilder using this.state.total price to order Summary wrapper
+//Outputted that price in Order Summary
+//-------------------
+//-------------------
+//-------------------
