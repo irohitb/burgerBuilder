@@ -479,3 +479,23 @@ export default logo;
 //then we passed it as src={BurgerLogo}
 //Note React automatically recognize .png as an image just like for CSS and when we pas BurgerLogo it would know that it is an image
 //We imported our logo in layout.js and in return statement we added our logo by just doing this <Logo />
+//-------------------
+//-------------------
+//-------------------
+
+
+
+//Commit 28
+//Adding reusable navigation items
+//----------
+//In this lecture, We created components for our Navbar, We created navigation-items (.js/.css) and nav-items (.js/css). Each of them is given its own styling
+//Navigation items holds <ul> and nav items which is its sub-item holds <li>
+//nav-items is added with its own css and contains an <a> tag which gets props dynaically through props.link and if class active should be shown or not (this is Boolean value)
+  <a href={props.link} className={props.active ? Classes.active : null }>  {props.children} </a>
+//We pass this to child component by giving props a link and class.active a boolean value by
+<Navitems link="/" active> Burger Builder </Navitems>
+//When active is writen is just like this, class.active will be considered as true
+//We bass navigationitems.js file to toolbar and used <Navitems /> to output it
+//-------------------
+//-------------------
+//-------------------
