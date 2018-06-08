@@ -6,6 +6,7 @@ import Navitems from '../navigation-items/navigation-items.js';
 const toolbar = (props) => {
   return (
     <header className={Classes.Toolbar}>
+    <div> Menu </div>
     <Logo />
     <Navitems />
     </header>

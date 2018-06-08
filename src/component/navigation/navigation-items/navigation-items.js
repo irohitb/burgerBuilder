@@ -1,12 +1,12 @@
 import React from 'react';
 import Classes from './navigation-items.css'
-import Navitems from './navigation-items-list/nav-items.js'
+import Navitem from './navigation-items-list/nav-items.js'
 
 const navitems = (props) => {
   return (
     <ul className={Classes.NavigationItems}>
-      <Navitems link="/" active> Burger Builder </Navitems>
-      <Navitems link="/"> Check Out </Navitems>
+      <Navitem link="/" active> Burger Builder </Navitem>
+      <Navitem link="/"> Check Out </Navitem>
     </ul>
   )
 }

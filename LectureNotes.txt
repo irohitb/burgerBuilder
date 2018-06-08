@@ -499,3 +499,17 @@ export default logo;
 //-------------------
 //-------------------
 //-------------------
+
+
+
+//Commit 29
+//Creating a responsive Side Drawer
+//-------
+//We created a sideDrawer.js file and css file
+//We imported Logo and NavItems and css
+//The sideDrawer css file contains nedia query css which allows it to be displayed only a smaller device and ehnce we added CSS
+//we added Logo and <navitems> inside div tag (div -> * logo * (nav -> navitems)
+//we imported this to layout (since it is kinds of like a toolbar for mobile so it sits on the same level as our toolbar component and hence we imported it into layout)
+//-------------------
+//-------------------
+//-------------------
