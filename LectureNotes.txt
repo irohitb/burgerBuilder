@@ -513,3 +513,17 @@ export default logo;
 //-------------------
 //-------------------
 //-------------------
+
+
+
+//commit 30
+//Working on responsive design
+//------
+//In the previous module our sidedrawer logo looked weird since its was following NavBar height of 80% (it should have taken toolbar height of 80% and 80% of  sidedrawer is weird)
+//To overcome this, even though we have defined height in our logo.css, we did inline-styling
+//i.e in our logo.js  we added -> style={{height: props.height}}>
+<div className={Classes.logo} style={{height: props.height}}>
+  <img src={Burgerlogo} alt="MyBurger"/>
+</div>
+//Inline Style will overwrite the externa css style and then we can pass the respective height from navbar and sidedrawer (where our logo is used)
+//We can also wrap this under a div and give div an inline heigh (ex - <div style={{height: 11%}}> <logo /> </div>) -> This should also work 

@@ -63,6 +63,8 @@ This means we might be calling something in render i.e  you call some method in 
 
 19. Adding an image in React
 
+20. Responsive design styling (overwriting css when passing the child into props)
+
 //React: Understanding Props
 //---xxx-----
 //Props are how components talk to each other.
@@ -566,3 +568,16 @@ export default logo;
 //Note React automatically recognize .png as an image just like for CSS and when we pas BurgerLogo it would know that it is an image
 //-----x----x------x----x------x-
 //-----x------x------x----x-----
+
+
+20.
+Responsive design styling (overwriting css when passing the child into props)
+//-------
+Commit 30 -> Making burger
+even though we have defined height in our logo.css, we did inline-styling
+//i.e in our logo.js  we added -> style={{height: props.height}}>
+<div className={Classes.logo} style={{height: props.height}}>
+ <img src={Burgerlogo} alt="MyBurger"/>
+</div>
+//Inline Style will overwrite the externa css style and then we can pass the respective height from navbar and sidedrawer (where our logo is used)
+//We can also wrap this under a div and give div an inline heigh (ex - <div style={{height: 11%}}> <logo /> </div>) -> This should also work

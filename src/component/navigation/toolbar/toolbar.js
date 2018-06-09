@@ -7,7 +7,7 @@ const toolbar = (props) => {
   return (
     <header className={Classes.Toolbar}>
     <div> Menu </div>
-    <Logo />
+    <Logo height="70%" />
     <Navitems />
     </header>
   )
