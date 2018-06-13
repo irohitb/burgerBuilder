@@ -10,12 +10,12 @@ const sidedrawer = (props) => {
   let attachedClasses = [Classes.sidedrawer, Classes.close]
   console.log(props.SideDrawerOpen)
   if (props.SideDrawerOpen) {
-      let attachedClasses = [Classes.sidedrawer, Classes.open]
+   attachedClasses = [Classes.sidedrawer, Classes.open]
   }
   return (
     <Aux>
-      <Backdrop show={props.SideDrawerOpen} purchasingHandlerClose={props.sideDrawerCloseHandler}/>
-      <div className={attachedClasses.join('')}>
+      <Backdrop show={props.SideDrawerOpen} purchasingHandlerClose={props.sideDrawerCloseHandler} />
+      <div className={attachedClasses.join(' ')}>
         <Logo height="11%" />
         <nav>
           <Navitems />

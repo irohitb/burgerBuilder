@@ -11,8 +11,8 @@ class Layout extends Component {
   }
 
   sideDrawerCloseHandler = () => {
+    this.setState({sidedrawer: false})
     console.log(this.state.sidedrawer)
-    this.setState({sideDrawer: false})
   }
 
 
@@ -20,8 +20,8 @@ class Layout extends Component {
       return (
         <Aux>
           <Toolbar />
-          <SideDrawer SideDrawerOpen={this.state.sidedrawer} sideDrawerCloseHandler={this.sideDrawerCloseHandler}/>
-          <main className={classes.Co}>
+          <SideDrawer SideDrawerOpen={this.state.sidedrawer} sideDrawerCloseHandler={this.sideDrawerCloseHandler} />
+          <main className={classes.co}>
           {this.props.children}
           </main>
         </Aux>

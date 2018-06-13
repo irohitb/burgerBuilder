@@ -541,3 +541,23 @@ export default logo;
 //-------------------
 //-------------------
 //-------------------
+
+
+//Commit 34
+//Reusing the backdrop
+//-----
+//In this lecture we added the backdrop to our sideDrawer (tansparent black background)
+//We imported Backdrop to sideDrawer and wrapped sideDrawer with Aux, Backdrop sits below the sideDrawer and since sideDrawer have greater z-index when compared to backdrop, the non siderDrawer parts gets blurred (or gets black transparent background)
+//We created layout as stateful component to monitor the state of sideDrawer (open or close) hence now it would class Layout extends component
+//We added state of sidedrawer as true and made sideDrawerCloseHandler which change the state to the false
+//We passed sideDrawerOpen and sideDrawerCloseHandler to the side drawer where sideDrawerCloseHandler is this.sideDrawerCloseHandler and sideDrawerOpen is the current state (this.state.sidedrawer)
+//Inside sideDrawer we intially set the class to close and change it true only when props.sideDrawerOpen is true (we did this inform of an array) i.e
+let attachedClasses = [Classes.sidedrawer, Classes.close]
+if (props.SideDrawerOpen) {
+ attachedClasses = [Classes.sidedrawer, Classes.open]
+}
+//We added this div (joined these two classes), <div className={attachedClasses.join(' ')}>
+//For our backdrop, we passed show as props.SideDrawerOpen and purchasingHandlerClose as {props.sideDrawerCloseHandler}
+//-------------------
+//-------------------
+//-------------------
