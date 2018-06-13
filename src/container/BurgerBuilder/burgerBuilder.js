@@ -16,83 +16,86 @@ const INGREDIENT_PRICE = {
 //let purchasable = false;
 
 class BurgerBuilder extends Component {
-state = {
-    ingredient: {
-      salad: 0,
-      bacon: 0,
-      cheese: 0,
-      meat: 0
-    },
-    totalPrice: 4,
-    purchasable: false,
-    purchasing: false
-  }
+  state = {
+      ingredient: {
+        salad: 0,
+        bacon: 0,
+        cheese: 0,
+        meat: 0
+      },
+      totalPrice: 4,
+      purchasable: false,
+      purchasing: false
+    }
 
-purchasableHandle = (ingredient) => {
-  let ppurchasable = Object.keys(ingredient) // this should log ["salad",'bacon','cheese']
-  ppurchasable = ppurchasable.map((el) => {
-    return ingredient[el] //this shoudl log ("0", "0", "0")
-  })
-  ppurchasable = ppurchasable.reduce((total, amount) => {
+  purchasableHandle = (ingredient) => {
+    let ppurchasable = Object.keys(ingredient) // this should log ["salad",'bacon','cheese']
+    ppurchasable = ppurchasable.map((el) => {
+      return ingredient[el] //this shoudl log ("0", "0", "0")
+    })
+    ppurchasable = ppurchasable.reduce((total, amount) => {
 
-     return total+amount;
-  },0);
-  console.log("Purchasable sum", ppurchasable)
-  this.setState({purchasable: ppurchasable > 0});
-  console.log(this.state.purchasable)
-  }
-
-
-
-addIngredientHandler = (type) => {
-  console.log(type)
-  const oldCount = this.state.ingredient[type] //this shold log the value or the property next to it. for example 1 or 2
-  const updatedCount = oldCount + 1; //this should add one to whatever the count is
-  let updatedingredients = {
-    ...this.state.ingredient
-  };
-  updatedingredients[type] = updatedCount;
-  const ingredientPrice = INGREDIENT_PRICE[type]
-  const  totalPrice = this.state.totalPrice
-  const newPrice = totalPrice + ingredientPrice
-  this.setState({totalPrice: newPrice, ingredient: updatedingredients});
-  this.purchasableHandle(updatedingredients)
-  console.log("Add Ingredient", this.state.purchasable)
-}
+       return total+amount;
+    },0);
+    console.log("Purchasable sum", ppurchasable)
+    this.setState({purchasable: ppurchasable > 0});
+    console.log(this.state.purchasable)
+    }
 
 
 
-removeIngredientHandler = (type) => {
+  addIngredientHandler = (type) => {
 
-  const oldCount = this.state.ingredient[type]
-  if (oldCount <= 0) {
-    //Our code works without this as well
-    return;
-  }
-  const updatedCount = oldCount - 1;
-  let updatedingredients = {
-    ...this.state.ingredient
-  };
-  updatedingredients[type] = updatedCount;
-  const ingredientPrice = INGREDIENT_PRICE[type]
-  const  totalPrice = this.state.totalPrice
-  const newPrice = totalPrice - ingredientPrice
-  this.setState({totalPrice: newPrice, ingredient: updatedingredients});
+    const oldCount = this.state.ingredient[type]
+    console.log("this is old count", oldCount) //this shold log the value or the property next to it. for example 1 or 2
+    const updatedCount = oldCount + 1; //this should add one to whatever the count is
+    let updatedingredients = {
+      ...this.state.ingredient
+    };
+    updatedingredients[type] = updatedCount;
+    const ingredientPrice = INGREDIENT_PRICE[type]
+    const  totalPrice = this.state.totalPrice
+    const newPrice = totalPrice + ingredientPrice
+    this.setState({totalPrice: newPrice, ingredient: updatedingredients});
     this.purchasableHandle(updatedingredients)
-    console.log("remove Ingredient", this.state.purchasable)
-}
+    console.log("Add Ingredient", this.state.purchasable)
+  }
 
-purchasingHandlerOpen =  () =>  {
-  this.setState({purchasing: true})
-}
 
-purchasingHandlerClose = () => {
-  this.setState({purchasing: false})
-}
 
-purchaseContinueHandler = () => {
-  alert("You Continue")
-}
+  removeIngredientHandler = (type) => {
+
+    const oldCount = this.state.ingredient[type]
+    if (oldCount <= 0) {
+      //Our code works without this as well
+      return;
+    }
+    const updatedCount = oldCount - 1;
+    let updatedingredients = {
+      ...this.state.ingredient
+    };
+    updatedingredients[type] = updatedCount;
+    const ingredientPrice = INGREDIENT_PRICE[type]
+    const  totalPrice = this.state.totalPrice
+    const newPrice = totalPrice - ingredientPrice
+    this.setState({totalPrice: newPrice, ingredient: updatedingredients});
+      this.purchasableHandle(updatedingredients)
+      console.log("remove Ingredient", this.state.purchasable)
+  }
+
+  purchasingHandlerOpen =  () =>  {
+    this.setState({purchasing: true})
+  }
+
+  purchasingHandlerClose = () => {
+    this.setState({purchasing: false})
+  }
+
+  purchaseContinueHandler = () => {
+    alert("You Continue")
+  }
+
+
   render () {
 
     const disabledInfo = {
@@ -103,12 +106,12 @@ purchaseContinueHandler = () => {
         disabledInfo[key] = disabledInfo[key] <= 0
       }
 
-  //    if (this.state.totalPrice == 4) {
-  //      purchasable = true;
-  //      console.log("tt:",purchasable)
-  //    } else {
-  //      purchasable = false;
-  //    }
+    //    if (this.state.totalPrice == 4) {
+    //      purchasable = true;
+    //      console.log("tt:",purchasable)
+    //    } else {
+    //      purchasable = false;
+    //    }
 
     return (
         <Aux>

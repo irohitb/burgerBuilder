@@ -65,6 +65,8 @@ This means we might be calling something in render i.e  you call some method in 
 
 20. Responsive design styling (overwriting css when passing the child into props)
 
+21. When to use Stateful component (includes function inside stateless component)
+
 //React: Understanding Props
 //---xxx-----
 //Props are how components talk to each other.
