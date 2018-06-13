@@ -6,3 +6,14 @@ CSS list-style Property
 //https://www.w3schools.com/cssref/pr_list-style.asp
 
 //MediaQuery
+
+
+//Display: inline-flex vs Display: Flex
+//
+
+
+
+//Interesting article about the display
+https://css-tricks.com/almanac/properties/d/display/
+
+//Flex box leaves item sitting next to each other by default 

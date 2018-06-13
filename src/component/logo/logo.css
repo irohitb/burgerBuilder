@@ -1,7 +1,10 @@
 .logo {
   background-color: white;
   padding: 8px;
-  height: 70%;
+  height: 100%;
+  box-sizing: border-box;
+  margin-bottom: 32px;
+  border-radius: 5px;
 }
 
 .logo img {

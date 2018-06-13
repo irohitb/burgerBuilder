@@ -526,4 +526,18 @@ export default logo;
   <img src={Burgerlogo} alt="MyBurger"/>
 </div>
 //Inline Style will overwrite the externa css style and then we can pass the respective height from navbar and sidedrawer (where our logo is used)
-//We can also wrap this under a div and give div an inline heigh (ex - <div style={{height: 11%}}> <logo /> </div>) -> This should also work 
+//We can also wrap this under a div and give div an inline heigh (ex - <div style={{height: 11%}}> <logo /> </div>) -> This should also work
+//-------------------
+//-------------------
+//-------------------
+
+
+//Commit 31
+//More About responsive adjustment in navbar
+//-----
+//Earlier our desktop navigation was visible even though we were on mobile-toggling
+//We changed CSS in our navigation-items.css (this was to change the styling from column to row and so on)
+//We add a nav tag which wraps our navigation-items.js in toolbar.js and in toolbar.css (media query to set minimum width)
+//-------------------
+//-------------------
+//-------------------
