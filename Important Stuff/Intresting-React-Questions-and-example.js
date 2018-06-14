@@ -39,3 +39,7 @@ https://hackernoon.com/writing-clean-and-concise-react-components-by-making-full
 State and lifecycle
 https://stackoverflow.com/questions/50837670/reactjs-setstate-previous-state-is-the-first-argument-props-as-the-second-argum/50837784#50837784ß
 https://reactjs.org/docs/state-and-lifecycle.html
+
+
+For PropsValidation we need to convert functional component into class Component
+https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/3466920

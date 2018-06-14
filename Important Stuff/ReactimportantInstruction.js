@@ -67,6 +67,8 @@ This means we might be calling something in render i.e  you call some method in 
 
 21. When to use Stateful component (includes function inside stateless component)
 
+22. Adding Props Validation to react functional components
+
 //React: Understanding Props
 //---xxx-----
 //Props are how components talk to each other.
@@ -583,3 +585,22 @@ even though we have defined height in our logo.css, we did inline-styling
 </div>
 //Inline Style will overwrite the externa css style and then we can pass the respective height from navbar and sidedrawer (where our logo is used)
 //We can also wrap this under a div and give div an inline heigh (ex - <div style={{height: 11%}}> <logo /> </div>) -> This should also work
+
+22.
+Adding Props Validation to react functional components
+//-------
+George  · 4 months ago
+Just in case its helpful for anyone who might not be too familiar with Javascript, you can add proptypes to functional components by simply adding the propTypes object to the function. ie,
+
+import React from 'react';
+import PropTypes from 'prop-types';
+
+const burger = (props) => {
+    // code in here
+};
+
+burger.propTypes = {
+    myProp: PropTypes.any,
+};
+
+export default burger;
