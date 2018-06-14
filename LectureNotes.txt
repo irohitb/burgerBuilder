@@ -561,3 +561,21 @@ if (props.SideDrawerOpen) {
 //-------------------
 //-------------------
 //-------------------
+
+
+//commit 35
+//Adding sideDrawer toggle button
+//----
+//---Rohit Method
+//In this lecture, we added sideDrawerTogglerHandler which changes the state of the sidetoggler (it looks like this)
+sideDrawerTogglerHandler = () => {
+  this.setState((prevState) => ({
+    sidedrawer: !prevState.sidedrawer
+  }));
+}
+//We passed this to <ToolBar using   <Toolbar sideDrawerTogglerHandler={this.sideDrawerTogglerHandler}/>
+//In Toolbar we created a button which is only visible in small screen and clicking the button toggles the class
+//  <button onClick={props.sideDrawerTogglerHandler}> Click Me </button> ,we wrapped this with div and added css to make it visible on mobile screen
+//-------------------
+//-------------------
+//-------------------

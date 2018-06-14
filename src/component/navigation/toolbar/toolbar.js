@@ -6,8 +6,8 @@ import Navitems from '../navigation-items/navigation-items.js';
 const toolbar = (props) => {
   return (
     <header className={Classes.Toolbar}>
-      <div>
-        Menu
+      <div className={Classes.SideDrawerVisibility}>
+        <button onClick={props.sideDrawerTogglerHandler}> Click Me </button>
       </div>
       <div className={Classes.Logo}>
         <Logo height="100%"/>

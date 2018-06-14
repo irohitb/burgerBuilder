@@ -7,7 +7,7 @@ import SideDrawer from '../navigation/sidedrawer/sidedrawer.js'
 class Layout extends Component {
 
   state = {
-    sidedrawer: true
+    sidedrawer: false
   }
 
   sideDrawerCloseHandler = () => {
@@ -15,11 +15,17 @@ class Layout extends Component {
     console.log(this.state.sidedrawer)
   }
 
+  sideDrawerTogglerHandler = () => {
+    this.setState((prevState) => ({
+      sidedrawer: !prevState.sidedrawer
+    }));
+  }
+
 
   render () {
       return (
         <Aux>
-          <Toolbar />
+          <Toolbar sideDrawerTogglerHandler={this.sideDrawerTogglerHandler}/>
           <SideDrawer SideDrawerOpen={this.state.sidedrawer} sideDrawerCloseHandler={this.sideDrawerCloseHandler} />
           <main className={classes.co}>
           {this.props.children}
