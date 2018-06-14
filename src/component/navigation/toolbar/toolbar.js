@@ -2,13 +2,12 @@ import React from 'react';
 import Classes from './toolbar.css';
 import Logo from '../../logo/logo.js';
 import Navitems from '../navigation-items/navigation-items.js';
+import DrawToggler from '../sidedrawer/drawtoggler/drawtoggler.js';
 
 const toolbar = (props) => {
   return (
     <header className={Classes.Toolbar}>
-      <div className={Classes.SideDrawerVisibility}>
-        <button onClick={props.sideDrawerTogglerHandler}> Click Me </button>
-      </div>
+      <DrawToggler sideDrawerToggler={props.sideDrawerTogglerHandler} />
       <div className={Classes.Logo}>
         <Logo height="100%"/>
       </div>

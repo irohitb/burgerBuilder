@@ -579,3 +579,32 @@ sideDrawerTogglerHandler = () => {
 //-------------------
 //-------------------
 //-------------------
+//--Max Method
+//We create a seperate stateless functional component inside sidedrawer named drawtoggler
+//drawtoggler contains just a div tag which gets props from toolbar (sideDrawerToggle props)
+//We import drawtoggler to toolbar
+//Toolbar gets sideDrawerToggle which changes the sidedrawer state to true or false from layout.js (layout passes sideDrawerToggle props which is passed to drawtoggle)
+//We added CSS to DrawerToggler
+//-------------------
+//-------------------
+//-------------------
+
+
+//commit 36
+//Adding toggler icon (hamburger icon)
+//--Here we commited Max Method
+//We added the CSS max give
+//Important note about the CSS
+//3 toggle line we see at side bar
+CSS for this
+.DrawerToggler div {
+    width: 90%;
+    height: 3px;
+    background-color: white;
+}
+JSX
+<div className={Classes.DrawerToggler} onClick={props.sideDrawerToggler}>
+<div> </div>
+<div> </div>
+<div> </div>
+</div>

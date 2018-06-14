@@ -16,4 +16,21 @@ CSS list-style Property
 //Interesting article about the display
 https://css-tricks.com/almanac/properties/d/display/
 
-//Flex box leaves item sitting next to each other by default 
+//Flex box leaves item sitting next to each other by default
+3 toggle line we see at side bar
+
+CSS for this
+.DrawerToggler div {
+    width: 90%;
+    height: 3px;
+    background-color: white;
+}
+
+JSX
+<div className={Classes.DrawerToggler} onClick={props.sideDrawerToggler}>
+<div> </div>
+<div> </div>
+<div> </div>
+</div>
+
+Refer to lecture 139

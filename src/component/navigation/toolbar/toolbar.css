@@ -17,18 +17,13 @@
   height: 100%;
 }
 
-.SideDrawerVisibility {
-display: none;
-  }
 
 
 @media (max-width: 499px) {
   .DesktopOnly {
 display: none;
   }
-  .SideDrawerVisibility {
-display: block;
-    }
+
 }
 
 
