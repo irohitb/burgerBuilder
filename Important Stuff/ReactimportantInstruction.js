@@ -13,6 +13,7 @@ In react
 //-------------
 //-------------
 
+//stateless component is always impure component
 
 //Errors
 if you get an error which states something like this
@@ -38,6 +39,7 @@ This means we might be calling something in render i.e  you call some method in 
 6. Pure Function in Javascript
 
 7. Pure Component vs COmponent  (class vs function)
+	--> What is PureComponent
 
 8. HOC
 
@@ -174,6 +176,12 @@ For example this is the wrapping element..
 7
 //PureComponent vs Component
 //------
+When to use Component or PureComponent
+//PureComponent is exactly the same as Component except that it handles the shouldComponentUpdate method for you. When props or state changes, PureComponent will do a shallow comparison on both props and state. Component on the other hand won’t compare current props and state to next out of the box. Thus, the component will re-render by default whenever shouldComponentUpdate is called.
+https://codeburst.io/when-to-use-component-or-purecomponent-a60cfad01a81
+https://medium.com/front-end-hacking/using-a-purecomponent-in-reacts-262972f9f1e0
+
+//PureComponent does shouldComponentUpdate checks hence using it frequently for unecessary checks can actually cost us more than gain
 //The major difference between the both comes down to shouldComponentUpdate
 //By default, When we extend a class component, it sets shouldComponentUpdate return value to True which means it will render everything, every time state changes (or props).
 //This causes unnecessary render, One way to overcome this problem is to use condition to check when your component needs to render in components.
@@ -191,6 +199,8 @@ shouldComponentUpdate (nextProps, nextState) {
 //But PureComponent will only do a very shallow check, You can't expect react to do Deep Nested check for objects and array you hence we say it to be shallow check.
 //Note: To understand in sort of a simpler terms, shallow quality check means that JS only checks that the value’s object ids (as in, the memory address for where JS stores the information for that particular object) are the same, not that their content is the same. On the other Deep quality check would be looping through every element to see if they are equal or not
 //You can further read more about this here: https://reactjs.org/docs/shallow-compare.html
+
+When comparing previous props and state to next, a shallow comparison will check that primitives have the same value (eg, 1 equals 1 or that true equals true) and that the references are the same between more complex javascript values like objects and arrays.
 //-------------
 //-------------
 

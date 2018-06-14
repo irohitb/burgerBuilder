@@ -8,7 +8,7 @@ import Aux from '../../../HOC/Aux'
 
 const sidedrawer = (props) => {
   let attachedClasses = [Classes.sidedrawer, Classes.close]
-  console.log(props.SideDrawerOpen)
+
   if (props.SideDrawerOpen) {
    attachedClasses = [Classes.sidedrawer, Classes.open]
   }

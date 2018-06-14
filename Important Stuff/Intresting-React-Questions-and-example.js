@@ -25,7 +25,7 @@ You'll see the same thing with classname="myCssClass" & classname={myCombinedCla
 
 
 DIV and AUX
-//https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/4422136
+https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/4422136
 
 
 Function inside Stateless Component
@@ -43,3 +43,8 @@ https://reactjs.org/docs/state-and-lifecycle.html
 
 For PropsValidation we need to convert functional component into class Component
 https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/3466920
+
+
+Pure Component vs Component
+https://codeburst.io/when-to-use-component-or-purecomponent-a60cfad01a81
+https://medium.com/front-end-hacking/using-a-purecomponent-in-reacts-262972f9f1e0

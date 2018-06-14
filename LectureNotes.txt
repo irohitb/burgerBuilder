@@ -592,6 +592,7 @@ sideDrawerTogglerHandler = () => {
 
 //commit 36
 //Adding toggler icon (hamburger icon)
+//----
 //--Here we commited Max Method
 //We added the CSS max give
 //Important note about the CSS
@@ -608,3 +609,19 @@ JSX
 <div> </div>
 <div> </div>
 </div>
+//-------------------
+//-------------------
+//-------------------
+
+
+//Commit 37
+//-------
+//Improving Performance
+//Here we try to figure things which render all the times but don't need to render when not required
+//For example order Summary in modal, We don't need the orderSummary to update at all the time so we convert the modal to stateful or class component
+//In shouldComponentUpdate we added condition stating if our previous state is not equal to our current state then only it will render
+//WE also converted our orderSummary to stateful component (which wasn't required and can be used as a functional component)
+//We didn't used pure component because pure component will do additional unnecessary checks as well
+//-------------------
+//-------------------
+//-------------------

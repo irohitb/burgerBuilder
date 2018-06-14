@@ -12,7 +12,6 @@ class Layout extends Component {
 
   sideDrawerCloseHandler = () => {
     this.setState({sidedrawer: false})
-    console.log(this.state.sidedrawer)
   }
 
   sideDrawerTogglerHandler = () => {

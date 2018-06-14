@@ -37,17 +37,14 @@ class BurgerBuilder extends Component {
 
        return total+amount;
     },0);
-    console.log("Purchasable sum", ppurchasable)
     this.setState({purchasable: ppurchasable > 0});
-    console.log(this.state.purchasable)
     }
 
 
 
   addIngredientHandler = (type) => {
 
-    const oldCount = this.state.ingredient[type]
-    console.log("this is old count", oldCount) //this shold log the value or the property next to it. for example 1 or 2
+    const oldCount = this.state.ingredient[type] //this shold log the value or the property next to it. for example 1 or 2
     const updatedCount = oldCount + 1; //this should add one to whatever the count is
     let updatedingredients = {
       ...this.state.ingredient
@@ -58,7 +55,7 @@ class BurgerBuilder extends Component {
     const newPrice = totalPrice + ingredientPrice
     this.setState({totalPrice: newPrice, ingredient: updatedingredients});
     this.purchasableHandle(updatedingredients)
-    console.log("Add Ingredient", this.state.purchasable)
+
   }
 
 
@@ -80,7 +77,7 @@ class BurgerBuilder extends Component {
     const newPrice = totalPrice - ingredientPrice
     this.setState({totalPrice: newPrice, ingredient: updatedingredients});
       this.purchasableHandle(updatedingredients)
-      console.log("remove Ingredient", this.state.purchasable)
+
   }
 
   purchasingHandlerOpen =  () =>  {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component} from "react";
 import Aux from "../../HOC/Aux.js"
 import Button from "../UI/Button/button.js"
 
@@ -10,39 +10,42 @@ const INGREDIENT_PRICE = {
 }
 
 
-const orderSummary = (props) => {
-  const summary = Object.keys(props.ingredient)
-            // [This should give "salad", "beacon"
+class OrderSummary extends Component {
+  //This could be a functional component and doesn't have to be a class 
+  componentWillUpdate() {
+    console.log("[Order summary will update]")
+  }
 
-  return (
-    <Aux>
-        <h3> Your order </h3>
-        <p> Your burger contains the following item </p>
-        <table>
-        <tr>
-          <th>Ingredients </th>
-          <th> Quantity </th>
-          <th> Price </th>
-        </tr>
-        {summary.map(el => (
-          <tr>
-            <td> <span style={{textTransform: 'capitalize'}}> {el} </span> </td>
-            <td> {props.ingredient[el]} </td>
-            <td> ${(props.ingredient[el] * INGREDIENT_PRICE[el]).toFixed(2)} </td>
-          </tr>
-        )
-      )}
-      </table>
-      <p> Base Price <strong> $4 </strong> </p>
-      <p> Your total amount would be <strong> ${props.totalPrice} </strong> </p>
+  render () {
+    const summary = Object.keys(this.props.ingredient)
+
+    return (
+      <Aux>
+          <h3> Your order </h3>
+          <p> Your burger contains the following item </p>
+          <table>
+            <tr>
+              <th>Ingredients </th>
+              <th> Quantity </th>
+              <th> Price </th>
+            </tr>
+            {summary.map(el => (
+              <tr>
+                <td> <span style={{textTransform: 'capitalize'}}> {el} </span> </td>
+                <td> {this.props.ingredient[el]} </td>
+                <td> ${(this.props.ingredient[el] * INGREDIENT_PRICE[el]).toFixed(2)} </td>
+              </tr>
+            )
+          )}
+        </table>
+        <p> Base Price <strong> $4 </strong> </p>
+        <p> Your total amount would be <strong> ${this.props.totalPrice} </strong> </p>
         <p> Continue to Checkout?</p>
-        <Button btnType="Danger"  clicked={props.purchasingHandlerClose}>Cancel </Button>
-        <Button btnType="Success"  clicked={props.purchaseContinueHandler}> Order</Button>
-
-
+        <Button btnType="Danger"  clicked={this.props.purchasingHandlerClose}>Cancel </Button>
+        <Button btnType="Success"  clicked={this.props.purchaseContinueHandler}> Order</Button>
     </Aux>
-  )
-
+    )
+  }
 };
 
-export default orderSummary;
+export default OrderSummary;
