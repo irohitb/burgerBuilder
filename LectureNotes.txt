@@ -625,3 +625,17 @@ JSX
 //-------------------
 //-------------------
 //-------------------
+
+
+
+---------------------
+xxxxxxxxxxxxxxxxxxxxx
+---------------------
+xxxxxxxxxxxxxxxxxxxxx
+---------------------
+xxxxxxxxxxxxxxxxxxxxx
+
+
+
+//Reaching out to the Web, Ajax, HTTP
+//-------

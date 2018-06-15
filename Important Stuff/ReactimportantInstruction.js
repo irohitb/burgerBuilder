@@ -71,6 +71,7 @@ This means we might be calling something in render i.e  you call some method in 
 
 22. Adding Props Validation to react functional components
 
+23. When to use which lifecycle hooks
 //React: Understanding Props
 //---xxx-----
 //Props are how components talk to each other.

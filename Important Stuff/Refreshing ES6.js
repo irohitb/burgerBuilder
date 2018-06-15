@@ -74,6 +74,10 @@
 
 23 Array.join
 
+24. Promise in Javascript (lazy Evaluation)
+	----> .then()
+	----> .resolve()
+
 
 //------------------------
 //------------------------
@@ -1040,10 +1044,16 @@ for (const prop in obj) {
 // "obj.a = 1"
 // "obj.b = 2"
 // "obj.c = 3"
+//------------------------
+//------------------------
+//------------------------
+
 
 
 23
 Array.join
+//---------
+//-----****----****---
 The join() method joins all elements of an array (or an array-like object) into a string and returns this string.
 var elements = ['Fire', 'Wind', 'Rain'];
 
@@ -1055,3 +1065,29 @@ console.log(elements.join(''));
 
 console.log(elements.join('-'));
 // expected output: Fire-Wind-Rain
+
+
+24.
+Promise in JavaScript
+//---------
+//-----****----****---
+Source -> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+The Promise object represents the eventual completion (or failure) of an asynchronous operation, and its resulting value.
+A Promise is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous actions eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future.
+check the image in the folder (promise.png)
+
+
+then()
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then
+The then() method returns a Promise. It takes up to two arguments: callback functions for the success and failure cases of the Promise.
+
+var promise1 = new Promise(function(resolve, reject) {
+  resolve('Success!');
+});
+
+promise1.then(function(value) {
+  console.log(value);
+  // expected output: "Success!"
+});
+
+//Syntax for then with promise
