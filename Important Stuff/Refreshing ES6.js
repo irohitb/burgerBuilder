@@ -3,6 +3,9 @@
 //-------------
 //--------------
 
+//To read
+ ES8 Async/Await
+
 
 ////Note: objects and array are reference type
 /// To read object Destruction, Reference in primative type
@@ -26,11 +29,13 @@
 	---** function returniing function or return function
 	---** CallBack function
 	---** Prototype Inheritance
+  ---** {()=> (this.whatever)} vs {this.whatever}
 
 5. Clases
 	---** Instance of a class
 	---** Passing Classes
 	---** Inheritance in CLasses
+  ---** function () {} vs function = () => {}
 
 6. New Operator
 	---** Spread and Rest operator
@@ -43,7 +48,7 @@
 
 10. Static vs Instance Method
 
-11.Prototypal Inheritance
+11. Prototypal Inheritance
 	---** Differential Inheritance
 	---** Object.create()
 	---** Subclassing
@@ -140,7 +145,7 @@ console.log(array.splice(2));
 console.log(array);
 // shows [1, 2], original array altered.
 
-ar array2=[6,7,8,9,0];
+var array2=[6,7,8,9,0];
 console.log(array2.splice(2,1));
 // shows [8]
 
@@ -287,7 +292,19 @@ Person.prototype.name = function() {
 
 //Higher order function -> Function that accepts function as an argument
 
+//{()=> (this.whatever)} vs {this.whatever}
+{this.whatever} is not same with {this.whatever()}
+In javascript (and most of other languages) to execute a function you need parenthesizes. If you use  {this.whatever} you pass down a function as a parameter to a prop and when user clicks the passed function will be fired.
+Below is the sample code showing difference.
 
+const whatever = () => {
+  return "I log from function";
+}
+
+console.log(whatever); -> This will log function
+console.log(whatever()); -> This will log the value "I log from function"
+
+Note: whenever you put the parenthesis after a function you're running it, onClick will become the return value of whatever
 //------------------------
 //------------------------
 //------------------------
@@ -347,17 +364,11 @@ person.printtMyname();
 //---------
 
 To understand what an instance is, we must first understand what a class is.
-
 A class is simply a modeling tool provided by a programming language for use in representing real world objects in a program or application.
-
 The class is structured to accommodate an objects properties (member variables) and its operations (member functions/methods).
-
 An Instance on the other hand is simply a variation of an object created from a class. You create an object variant (Instance) using a constructor which is a method within a class specifically defined for this purpose.
-
 Consider a Car, if you wanted to represent it in your application you would define a class identified as Car which contains the properties of the car and the operations that the car can perform.
-
 It would look something close to this, supposing it was done in Java programming language:-
-
 public class Car{
     //the properties of the car
     private String make;
@@ -449,7 +460,8 @@ printMyname = () => {
 	}
 Note:
 
-
+//function () {} vs function = () => {}
+The this  keyword is the difference. In the first approach, this  will always refer to the class/ component. In the second approach, this will refer to the caller of the method. If you bind it to an event handler, that caller will NOT be the class/ component
 
 //------------------------
 //------------------------
@@ -591,9 +603,7 @@ console.log(car.make); //Suzuki
 //----**-----**---
 
 The basic paradigm in Java is that you write classes, and that those classes are instantiated. Instantiated objects (an instance of a class (object)) have attributes associated with them (member variables) that affect their behavior; when the instance has its method executed it will refer to these variables.
-
 However, all objects of a particular type might have behavior that is not dependent at all on member variables; these methods are best made static. By being static, no instance of the class is required to run the method.
-
 You can do this to execute a static method:
 
 MyObject.staticMethod();//Simply refers to the class's static code
@@ -619,9 +629,7 @@ obj.nonstaticMethod();//Refer to the instance's class's code
 //----**-----**-----**--
 
 In JavaScript, all functions are also objects, which means that they can have properties. And as it so happens, they all have a property called prototype
-
 Any time you create a function, it will automatically have a property called prototype, which will be initialized to an empty object.
-
 function Dog() {
 }
 Dog.prototype.bark = function() {
@@ -636,7 +644,6 @@ fido.bark(); // ‘woof!’
 //-----------------------
 //In the above example
 fido.hasOwnProperty(‘bark’) === false
-
 There’s really no such property as fido.bark. It doesn’t exist. Instead, fido has access to the bark() method on Dog.prototype because it’s an instance of Dog. This is the “invisible link” I mentioned. More commonly, it’s referred to as the “prototype chain”.
 
 //This is Differential Inheritance / Prototype Chain /
@@ -670,7 +677,6 @@ Rectangle.prototype.area = function() {
 };
 
 There’s that this keyword again. Just like in the constructor, this inside of a method refers to the instance.
-
 rect.area();
 
 //Subclassing
@@ -680,11 +686,8 @@ rect.area();
 function Square( length ) {
  this.width = this.height = length;
 }
-
 Square.prototype = Object.create( Rectangle.prototype );
-
 All instances of Square will automatically have Square.prototype in their prototype chain, and because Square.prototype has Rectangle.prototype in its prototype chain, every Square will have access to the methods of Rectangle.
-
 var square = new Square( 4 );
 
 quare.area();

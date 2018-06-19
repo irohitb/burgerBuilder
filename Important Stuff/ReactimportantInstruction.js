@@ -15,6 +15,7 @@ In react
 
 //stateless component is always impure component
 
+
 //Errors
 if you get an error which states something like this
 "Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops."
@@ -72,6 +73,9 @@ This means we might be calling something in render i.e  you call some method in 
 22. Adding Props Validation to react functional components
 
 23. When to use which lifecycle hooks
+ 	--->Using setState in componentDidMount
+	//https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/4022072
+	
 //React: Understanding Props
 //---xxx-----
 //Props are how components talk to each other.
