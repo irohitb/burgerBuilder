@@ -672,6 +672,23 @@ var child = Object.create( parent );
 child.hasOwnProperty(‘foo’); // false
 child.foo(); // ‘bar’
 
+//Another Example 
+const person = {
+  isHuman: false,
+  printIntroduction: function () {
+    console.log(`My name is ${this.name}. Am I human? ${this.isHuman}`);
+  }
+};
+
+const me = Object.create(person);
+
+me.name = "Matthew"; // "name" is a property set on "me", but not on "person"
+me.isHuman = true; // inherited properties can be overwritten
+
+me.printIntroduction();
+// expected output: "My name is Matthew. Am I human? true"
+
+
  //it creates a new, empty object that has parent in its prototype chain. That means that even though child doesn’t have its own foo() method, it has access to the foo() method from parent.
 
 //SubClassing
@@ -1105,5 +1122,9 @@ promise1.then(function(value) {
   console.log(value);
   // expected output: "Success!"
 });
+
+Promise.reject()
+The Promise.reject(reason) method returns a Promise object that is rejected with the given reason.
+Syntax -> Promise.reject(reason);
 
 //Syntax for then with promise

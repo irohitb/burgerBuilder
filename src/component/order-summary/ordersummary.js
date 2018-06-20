@@ -11,7 +11,7 @@ const INGREDIENT_PRICE = {
 
 
 class OrderSummary extends Component {
-  //This could be a functional component and doesn't have to be a class 
+  //This could be a functional component and doesn't have to be a class
   componentWillUpdate() {
     console.log("[Order summary will update]")
   }
@@ -24,19 +24,21 @@ class OrderSummary extends Component {
           <h3> Your order </h3>
           <p> Your burger contains the following item </p>
           <table>
-            <tr>
-              <th>Ingredients </th>
-              <th> Quantity </th>
-              <th> Price </th>
-            </tr>
-            {summary.map(el => (
+            <tbody>
               <tr>
-                <td> <span style={{textTransform: 'capitalize'}}> {el} </span> </td>
-                <td> {this.props.ingredient[el]} </td>
-                <td> ${(this.props.ingredient[el] * INGREDIENT_PRICE[el]).toFixed(2)} </td>
+                <th>Ingredients </th>
+                <th> Quantity </th>
+                <th> Price </th>
               </tr>
-            )
-          )}
+              {summary.map(el => (
+                <tr>
+                  <td> <span style={{textTransform: 'capitalize'}}> {el} </span> </td>
+                  <td> {this.props.ingredient[el]} </td>
+                  <td> ${(this.props.ingredient[el] * INGREDIENT_PRICE[el]).toFixed(2)} </td>
+                </tr>
+              )
+            )}
+          </tbody>
         </table>
         <p> Base Price <strong> $4 </strong> </p>
         <p> Your total amount would be <strong> ${this.props.totalPrice} </strong> </p>

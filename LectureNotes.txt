@@ -636,6 +636,27 @@ xxxxxxxxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxxxxxxxx
 
 
+---------------------
+//Accessing the server
 
-//Reaching out to the Web, Ajax, HTTP
-//-------
+
+//Commit 43
+//-----
+//Sending a post request to firebase
+//We created fire base real time test account
+//We added axios library using npm install axios --save
+//we create axios.js file with our End point given by firebae as default URL
+
+//Note
+//In our Firebase or any backend server we should always update the price so user can't manipulate
+//Firbase uses monogDb and mangoDB is just json like nested structure
+//For example if we don't have order and we send a post request to https://burger-project-8613b.firebaseio.com/order.json it will create order
+//For firebase we need to add json i.e order.json
+
+//Inside our purchaseContinueHandler = () => {
+//We created an object order which have ingredient, price, customer details, contact detials
+//Since we don't have order here we will send a post request and it will create a json object in firebase and return false
+//We also applied catch method as well to log error
+//-------------------
+//-------------------
+//-------------------
