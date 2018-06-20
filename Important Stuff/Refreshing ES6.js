@@ -29,13 +29,14 @@
 	---** function returniing function or return function
 	---** CallBack function
 	---** Prototype Inheritance
-  ---** {()=> (this.whatever)} vs {this.whatever}
+  ---** {()=> (this.whatever)} vs {this.whatever} vs {this.whatever()}
 
 5. Clases
 	---** Instance of a class
 	---** Passing Classes
 	---** Inheritance in CLasses
   ---** function () {} vs function = () => {}
+  ---** this.function vs return function
 
 6. New Operator
 	---** Spread and Rest operator
@@ -77,11 +78,13 @@
 
 22. for...in
 
-23 Array.join
+23. Array.join
 
 24. Promise in Javascript (lazy Evaluation)
 	----> .then()
 	----> .resolve()
+
+25. Prevent Default
 
 
 //------------------------
@@ -293,6 +296,8 @@ Person.prototype.name = function() {
 //Higher order function -> Function that accepts function as an argument
 
 //{()=> (this.whatever)} vs {this.whatever}
+//=-----
+//------/
 {this.whatever} is not same with {this.whatever()}
 In javascript (and most of other languages) to execute a function you need parenthesizes. If you use  {this.whatever} you pass down a function as a parameter to a prop and when user clicks the passed function will be fired.
 Below is the sample code showing difference.
@@ -302,9 +307,17 @@ const whatever = () => {
 }
 
 console.log(whatever); -> This will log function
+console.log(() => {whatever}) // log function with whatever
 console.log(whatever()); -> This will log the value "I log from function"
 
-Note: whenever you put the parenthesis after a function you're running it, onClick will become the return value of whatever
+Note: whenever you put the parenthesis after a function you're running it, onClick will become the return value of whatever (and hence return value is result which it shouldn't receive )
+
+https://stackoverflow.com/questions/50927194/choosing-the-correct-way-to-call-function-in-stateful-component/50927379#50927379
+onClick should always receive function, not its results, like that:
+<button ... onClick={props.purchasingHandlerOpen} />
+if you are changing onClick to {props.purchasingHandlerOpen()} you are calling the function, so you're passing its result to props. (this.whatever(something)) also calls the function
+If you are changing onClick to {() => purchasingHandlerOpen} you are passing undefined (its not a props.purchasingHandlerOpen, but purchasingHandlerOpen is undefined) so that React considers there is no a callback passed to the props
+
 //------------------------
 //------------------------
 //------------------------

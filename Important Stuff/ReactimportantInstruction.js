@@ -3,6 +3,7 @@
 In react
 //Updating happens from top to bottom and only when state or props change
 //In react when using custom tag, Always USE Uppercase starting letter
+//Using an arrow function in render creates a new function each time the component renders, which may have performance implications
 
 //Important Article About React
 //https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/4290876
@@ -75,7 +76,7 @@ This means we might be calling something in render i.e  you call some method in 
 23. When to use which lifecycle hooks
  	--->Using setState in componentDidMount
 	//https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/4022072
-	
+
 //React: Understanding Props
 //---xxx-----
 //Props are how components talk to each other.

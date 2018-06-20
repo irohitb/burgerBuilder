@@ -81,7 +81,9 @@ class BurgerBuilder extends Component {
   }
 
   purchasingHandlerOpen =  () =>  {
-    this.setState({purchasing: true})
+    return (
+      this.setState({purchasing: true})
+    )
   }
 
   purchasingHandlerClose = () => {

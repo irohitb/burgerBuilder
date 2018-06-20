@@ -48,3 +48,7 @@ https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/346
 Pure Component vs Component
 https://codeburst.io/when-to-use-component-or-purecomponent-a60cfad01a81
 https://medium.com/front-end-hacking/using-a-purecomponent-in-reacts-262972f9f1e0
+
+
+What does calling super in React Constructor Do
+https://stackoverflow.com/questions/40433463/what-does-calling-super-in-a-react-constructor-do/40440322
