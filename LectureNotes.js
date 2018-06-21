@@ -738,4 +738,23 @@ errorConfirmedHandler = () => {
 //-------------------
 //-------------------
 //-------------------
- 
+
+
+//commit: 47
+//Recieveing Data from Backend
+//In our Firebase we add ingredients and its component, we will get the link if we want to fetch data.
+//We set the state of the ingredient to null in our BurgerBuilder.js
+//We created new state error which is equal to null
+//Inside our BurgerBuilder, componentDidMount we do a get request to get Data
+//Once we get data we pass it to setState ingredient and if we get an error we catch it and change the setState of error to the error message
+//Since we our getting our Data from the backend, we need to display to only when we have it
+//We use if condition inside render if this.state.ingredient is true -> We display burger Build controls order Summary else we display spinner (this is stored in {burgerBuilder})
+//And if the error is true, we display the error message
+//For both of them we use this statement
+  let burgerBuilder = (this.state.error ? this.state.error.message : <Spinner />)
+//We moved the spinner (post) if statement after the ingredient (get) if statement
+//In burger builder return JSX part we added {burgerBuilder constant}
+//In Error handler we changed it from componentDidMount to componetDidMount
+//-------------------
+//-------------------
+//-------------------
