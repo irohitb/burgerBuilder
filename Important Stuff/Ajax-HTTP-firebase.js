@@ -23,3 +23,8 @@ About
 //Firbase uses monogDb and mangoDB is just json like nested structure
 //For example if we don't have order and we send a post request to https://burger-project-8613b.firebaseio.com/order.json it will create order
 //For firebase we need to add json i.e order.json
+
+Qestions to read
+//commit 45
+//interceptor Placement
+https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/3614640

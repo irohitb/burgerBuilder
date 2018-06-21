@@ -28,7 +28,8 @@ This means we might be calling something in render i.e  you call some method in 
 //-----Index-----------//
 
 1. Props
-	props Children
+	--> props Children
+	--> Spread operaor syntax in react
 
 2. Instance In React
 
@@ -44,6 +45,7 @@ This means we might be calling something in render i.e  you call some method in 
 	--> What is PureComponent
 
 8. HOC
+	--> Two ways of using HOC
 
 9. Possible Understanding of Export Statement with Brackets
 
@@ -77,7 +79,9 @@ This means we might be calling something in render i.e  you call some method in 
  	--->Using setState in componentDidMount
 	//https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/questions/4022072
 
-//React: Understanding Props
+
+
+React: Understanding Props
 //---xxx-----
 //Props are how components talk to each other.
 //props flow downwards from the parent component.
@@ -90,6 +94,9 @@ This means we might be calling something in render i.e  you call some method in 
 //In react: onClick() invoker's event & arguments will flow from the child to its parent.
 //-------------
 //-------------
+
+Spread Operator Synatx in react
+https://stackoverflow.com/questions/42811882/what-does-three-dots-do-in-reactjs/42811937#42811937
 
 2
 //Instance in React
@@ -229,6 +236,12 @@ App = () =>
 //When we extend stateful component like class, we have to use this, Also it is annynomous class {}
 //-------------
 //-------------
+
+There are two ways of using HOC
+//We use it through JSX for example
+<Aux> <> Content </Aux> </>
+second way is wrap around export statement
+export defauly HOC(App.js)
 
 
 9
@@ -425,7 +438,7 @@ console.log(withClass)
 console.log("----------")
 
 //Conclusion
-//First one to log was test1 and person.js which besides that did export default withClass(//Whatever)
+//First one to log was test1 and person.js sice that did export default withClass(//Whatever)
 //This happens because our Persons.js imports test.js and person.js which import withClass and in the end when they export basically they call withClass HOC (and passes the parameter)
 //Everything in the console.log before Class App.js
 //Everything after class App.js

@@ -11,7 +11,6 @@ const controls = [
 
 
 const buildControls = (props) => {
-console.log(props.purchasingHandlerOpen)
   return (
   <div className={Classes.BuildControls}>
     <p> Your current Price is $ {props.price} </p>

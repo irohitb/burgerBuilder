@@ -52,3 +52,6 @@ https://medium.com/front-end-hacking/using-a-purecomponent-in-reacts-262972f9f1e
 
 What does calling super in React Constructor Do
 https://stackoverflow.com/questions/40433463/what-does-calling-super-in-a-react-constructor-do/40440322
+
+Spread Operator in HOC
+https://stackoverflow.com/questions/48456599/what-is-the-purpose-of-spreading-props-in-react-higher-order-components
