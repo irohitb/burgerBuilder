@@ -10,6 +10,7 @@ class Modal extends Component {
   }
 
   render () {
+  
     return (
       <Aux>
       <Backdrop show={this.props.order} purchasingHandlerClose={this.props.purchasingHandlerClose} />

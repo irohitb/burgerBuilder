@@ -686,3 +686,56 @@ xxxxxxxxxxxxxxxxxxxxx
 shouldComponentUpdate(nextProps, nextState) {
   return  nextProps.order !== this.props.order || nextProps.children !== this.props.children;
 }
+//-------------------
+//-------------------
+//-------------------
+
+
+//commit 46
+//-------
+//Handling errors
+//In this lecture we created ErrorHandler.js which is an HOC
+//We imported React,Aux,  axios, modal (modal is the box on which we display things like order summary)
+//We created functioncal componenet which returns react class (since we are using second type of HOC, hence we get arguments for which we have to use function)
+//The functional component gets the component on which we want our errors to be displayed (burgerBuilder.js)
+//We create a state error which is intitally false and if set state is true it displays the error in modal
+//Inside componentDidMount we did something like this
+componentDidMount () {
+  axios.interceptors.request.use(req => {
+    this.setState({error:null})
+    return req
+  });
+  axios.interceptors.response.use(res => {
+    console.log(res)
+    return res
+  }, error => {
+    console.log(error)
+    this.setState({error:error})
+     console.log(this.state.error.message)
+  });
+//Here whenever we are sending post request we change the state to null so that we don't get error message
+//Also if we get the error message (as a response) we change the state to error
+
+//We also created
+errorConfirmedHandler = () => {
+  this.setState({error: null})
+}
+//This is passed to modal and hence it changes the state of the error make it false and closing the error
+//In our return JSX part we did something like this
+<Aux>
+  <Modal
+    order={this.state.error}
+    purchasingHandlerClose={this.errorConfirmedHandler}>
+      {this.state.error ? this.state.error.message : null}
+  </Modal>
+<WrappedComponent {...this.props} />
+</Aux>
+//Aux is hoc
+//Modal we pass order i.e if the error is true it will show the modal (this is same for orderSummary i.e if the purchasing is true then only it will show modal)
+//    purchasingHandlerClose={this.errorConfirmedHandler}> -> Closes the error box when we click on backdrop
+//{this.state.error ? this.state.error.message : null} -> Display the error message when state of the rror is true
+//<WrappedComponent {...this.props} /> forwards all the props, check react important instruction to understand more
+//-------------------
+//-------------------
+//-------------------
+ 

@@ -113,11 +113,11 @@ class BurgerBuilder extends Component {
       }
     }
 
-    axios.post("/orders", order).then(response => {
-      this.setState({loading: false})
+    axios.post("/orders.json", order).then(response => {
+      this.setState({loading: false, purchasing: false})
     })
     .catch(error => {
-      this.setState({loading: false})
+      this.setState({loading: false, purchasing: false})
       console.log(error)
       })
 
@@ -174,4 +174,4 @@ class BurgerBuilder extends Component {
 }
 
 
-export default withErrorHandler(BurgerBuilder, axios);
+export default withErrorHandler(BurgerBuilder);

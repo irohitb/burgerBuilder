@@ -1,10 +1,10 @@
 import React, { Component} from 'react';
-import axios from 'axios';
 import Modal from '../../component/UI/modal/modal.js'
+import axios from 'axios'
 import Aux from '../Aux.js'
 
-const ErrorHandler = (WrappedComponent, axios) => {
-  return class extends Component {
+const ErrorHandler = (WrappedComponent) => {
+  return class something extends Component {
       state = {
         error:null
       }
@@ -12,9 +12,11 @@ const ErrorHandler = (WrappedComponent, axios) => {
     componentDidMount () {
       axios.interceptors.request.use(req => {
         this.setState({error:null})
+        return req
       });
       axios.interceptors.response.use(res => {
         console.log(res)
+        return res
       }, error => {
         console.log(error)
         this.setState({error:error})
@@ -23,16 +25,16 @@ const ErrorHandler = (WrappedComponent, axios) => {
     }
 
     errorConfirmedHandler = () => {
-      this.setStae({error: null})
+      this.setState({error: null})
     }
 
     render() {
       return (
         <Aux>
           <Modal
-          order={this.state.error}
-          purchasingHandlerClose={this.errorConfirmedHandler }>
-            {this.state.error ? this.state.error.message : null}
+            order={this.state.error}
+            purchasingHandlerClose={this.errorConfirmedHandler}>
+              {this.state.error ? this.state.error.message : null}
           </Modal>
         <WrappedComponent {...this.props} />
       </Aux>
