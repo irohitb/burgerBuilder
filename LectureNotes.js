@@ -213,7 +213,7 @@ So whenever it sees an empty array, it won't add and hence we will get length
 //We do check over here only ->   for ( j=0; j<keyValue; j++) {, Hence we don't need to use reduce i.e if there is a keyValue then only it will push in
 var DisplayIngre = [] which is an array
 
-Hence we can simply do this (we don't need to use reduce method)
+Hence we can simply do this (we dont need to use reduce method)
 
 if (DisplayIngre.length === 0) {
 DisplayIngre = <p> Kuch Nhi </p>
@@ -660,3 +660,29 @@ xxxxxxxxxxxxxxxxxxxxx
 //-------------------
 //-------------------
 //-------------------
+
+
+//commit 44
+//-----
+//Displaying spinner while sending request
+//We created folder spinner having Spinner.js and css in UI and imported it burgerBuilder
+//We added a new state loading and set it to false, when this state is true, the spinner appears
+//we set the state true as soon as we call purchaseContinueHandler = () => { and change the state true in axios request
+  axios.post("/orders.json", order).then(response => {
+    this.setState({loading: false})
+  })
+  .catch(error => {
+    this.setState({loading: false})
+    console.log(error)
+    })
+//This will set the state false even if there is error so we don't continue to see the spinner
+//We create order object which we passed in this request
+//We created a new constant having value of order summary
+//We used if condition, if this.state.loading is true then we passed <Spinner />
+//If condition is false we return our orignal summary
+//Below modal we remove <orderSummary /> and passed the order summary constant which holds the return value of orderSummary <Modal> {orderSummary} </modal>
+//Since our orderSummary is below or inside modal and we have shouldComponentUpdate which check if our current order state is not equal to previous state, then only it will render, and since our order.state is not changing it won't show our spinner CSS
+//to fix this we do somethng like
+shouldComponentUpdate(nextProps, nextState) {
+  return  nextProps.order !== this.props.order || nextProps.children !== this.props.children;
+}

@@ -5,6 +5,7 @@ import BuildControls from '../../component/burger/Build-Control/build-controls.j
 import Modal from '../../component/UI/modal/modal'
 import OrderSummary from '../../component/order-summary/ordersummary.js'
 import axios from '../../axios.js'
+import Spinner from '../../component/UI/spinner/spinner.js'
 
 const INGREDIENT_PRICE = {
   salad: 0.5,
@@ -25,7 +26,8 @@ class BurgerBuilder extends Component {
       },
       totalPrice: 4,
       purchasable: false,
-      purchasing: false
+      purchasing: false,
+      loading: false
     }
 
   purchasableHandle = (ingredient) => {
@@ -76,7 +78,7 @@ class BurgerBuilder extends Component {
     const  totalPrice = this.state.totalPrice
     const newPrice = totalPrice - ingredientPrice
     this.setState({totalPrice: newPrice, ingredient: updatedingredients});
-      this.purchasableHandle(updatedingredients)
+    this.purchasableHandle(updatedingredients)
 
   }
 
@@ -91,6 +93,7 @@ class BurgerBuilder extends Component {
   }
 
   purchaseContinueHandler = () => {
+    this.setState({loading: true})
     const order = {
       ingredient: this.state.ingredient,
       totalPrice: this.state.totalPrice,
@@ -109,9 +112,11 @@ class BurgerBuilder extends Component {
     }
 
     axios.post("/orders.json", order).then(response => {
-      console.log(response)})
+      this.setState({loading: false})
+    })
     .catch(error => {
-        console.log(error)
+      this.setState({loading: false})
+      console.log(error)
       })
 
 
@@ -129,6 +134,15 @@ class BurgerBuilder extends Component {
         disabledInfo[key] = disabledInfo[key] <= 0
       }
 
+      let orderSummary =  <OrderSummary
+          ingredient={this.state.ingredient}
+          purchasingHandlerClose={this.purchasingHandlerClose}
+          purchaseContinueHandler={this.purchaseContinueHandler}
+          totalPrice={this.state.totalPrice} />
+
+      if (this.state.loading) {
+            orderSummary = <Spinner />
+      }
     //    if (this.state.totalPrice == 4) {
     //      purchasable = true;
     //      console.log("tt:",purchasable)
@@ -138,16 +152,20 @@ class BurgerBuilder extends Component {
 
     return (
         <Aux>
-          <Modal order={this.state.purchasing} purchasingHandlerClose={this.purchasingHandlerClose}>
-          <OrderSummary ingredient={this.state.ingredient} purchasingHandlerClose={this.purchasingHandlerClose} purchaseContinueHandler={this.purchaseContinueHandler} totalPrice={this.state.totalPrice}/>
+          <Modal
+            order={this.state.purchasing}
+            purchasingHandlerClose={this.purchasingHandlerClose}>
+            {orderSummary}
           </Modal>
-          <Burger ingredient={this.state.ingredient}/>
+          <Burger
+            ingredient={this.state.ingredient}/>
            <BuildControls
-           price={this.state.totalPrice.toFixed(2)}
-           ingredientAdded={this.addIngredientHandler} removeIngredientHandler={this.removeIngredientHandler}
-           disabled={disabledInfo}
-           purchasingHandlerOpen={this.purchasingHandlerOpen}
-           purchasableHandler={this.state.purchasable} />
+             price={this.state.totalPrice.toFixed(2)}
+             ingredientAdded={this.addIngredientHandler}
+             removeIngredientHandler={this.removeIngredientHandler}
+             disabled={disabledInfo}
+             purchasingHandlerOpen={this.purchasingHandlerOpen}
+             purchasableHandler={this.state.purchasable} />
         </Aux>
     )
   }
