@@ -741,6 +741,7 @@ errorConfirmedHandler = () => {
 
 
 //commit: 47
+//----x---x
 //Recieveing Data from Backend
 //In our Firebase we add ingredients and its component, we will get the link if we want to fetch data.
 //We set the state of the ingredient to null in our BurgerBuilder.js
@@ -755,6 +756,19 @@ errorConfirmedHandler = () => {
 //We moved the spinner (post) if statement after the ingredient (get) if statement
 //In burger builder return JSX part we added {burgerBuilder constant}
 //In Error handler we changed it from componentDidMount to componetDidMount
+//-------------------
+//-------------------
+//-------------------
+
+
+//Commit 50
+//--x---x----x----x--
+//Remving old Interceptors
+//We added this in component did mount, we are going to use error handler in multiple instance inside our programme, to avoid memory leaks we use this so that dead interceptors should be ejected from the memory
+componentWillUnmount() {
+          axios.interceptors.request.eject(this.reqInterceptor);
+          axios.interceptors.response.eject(this.resInterceptor);
+      }
 //-------------------
 //-------------------
 //-------------------
