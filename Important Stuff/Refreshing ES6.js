@@ -11,6 +11,7 @@
 /// To read object Destruction, Reference in primative type
 ///We can't use if-statements and variables directly inside the class
 //A constructor being used inside the class is called using this.construcor name (rember inheritance and rendering is inside a class)
+//https://stackoverflow.com/questions/3641229/class-variable-in-javascript
 
 //-------------
 // Index
@@ -26,13 +27,16 @@
 
 4. arrow function
 	---** Object Constructor
+  ---** What is returned from a constructor?
 	---** function returniing function or return function
 	---** CallBack function
 	---** Prototype Inheritance
   ---** {()=> (this.whatever)} vs {this.whatever} vs {this.whatever()}
 
 5. Clases
+  ---** Hoisting
 	---** Instance of a class
+  ---** Constructor in Class
 	---** Passing Classes
 	---** Inheritance in CLasses
   ---** function () {} vs function = () => {}
@@ -331,12 +335,38 @@ If you are changing onClick to {() => purchasingHandlerOpen} you are passing und
 
 
 
-5.
+5
+
 //Class in Javascript
 //-------
 //****---****---
+
+Hoisting
+//Consider this example
+function catName(name) {
+  console.log("My cat's name is " + name);
+}
+
+catName("Tigger");
+
+//Consider Another Example
+catName("Chloe");
+
+function catName(name) {
+  console.log("My cat's name is " + name);
+}
+/*
+The result of the code above is: "My cat's name is Chloe"
+*/
+
+Even though we call the function in our code first, before the function is written, the code still works. This is because of how context execution works in JavaScript.
+Read More at: https://developer.mozilla.org/en-US/docs/Glossary/Hoisting
+
 //Note:
 An important difference between function declarations and class declarations is that function declarations are hoisted and class declarations are not. You first need to declare your class and then access it, otherwise code like the following will throw a
+
+const p = new Rectangle(); // ReferenceError
+class Rectangle {}
 //classes are blueprint for object
 //classes can have methods and properties
 //Methods -> Functions attached to classes
@@ -382,6 +412,7 @@ The class is structured to accommodate an objects properties (member variables) 
 An Instance on the other hand is simply a variation of an object created from a class. You create an object variant (Instance) using a constructor which is a method within a class specifically defined for this purpose.
 Consider a Car, if you wanted to represent it in your application you would define a class identified as Car which contains the properties of the car and the operations that the car can perform.
 It would look something close to this, supposing it was done in Java programming language:-
+
 public class Car{
     //the properties of the car
     private String make;
@@ -410,6 +441,30 @@ public class Car{
     ...
 }
 let honda = new car() //Will be instance
+
+
+//Constructor in Class
+The constructor method is a special method for creating and initializing an object created with a class. There can only be one special method with the name "constructor" in a class. A SyntaxError will be thrown if the class contains more than one occurrence of a constructor method.
+A constructor can use the super keyword to call the constructor of the super class.
+
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+  // Getter
+  get area() {
+    return this.calcArea();
+  }
+  // Method
+  calcArea() {
+    return this.height * this.width;
+  }
+}
+
+const square = new Rectangle(10, 10);
+
+console.log(square.area); // 100
 
 
 //Inheritance in CLasses
@@ -672,7 +727,7 @@ var child = Object.create( parent );
 child.hasOwnProperty(‘foo’); // false
 child.foo(); // ‘bar’
 
-//Another Example 
+//Another Example
 const person = {
   isHuman: false,
   printIntroduction: function () {
