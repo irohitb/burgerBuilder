@@ -633,3 +633,9 @@ burger.propTypes = {
 };
 
 export default burger;
+
+
+23.
+When to use lifecycle methos
+//------
+From this article
