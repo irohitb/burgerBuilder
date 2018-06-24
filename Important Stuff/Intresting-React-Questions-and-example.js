@@ -77,3 +77,4 @@ https://stackoverflow.com/questions/48456599/what-is-the-purpose-of-spreading-pr
 
 13.
 React defaultProps
+https://reactjs.org/docs/react-component.html#defaultprops
