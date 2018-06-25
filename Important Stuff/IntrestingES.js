@@ -32,6 +32,8 @@ Innovocation Context vs Execut
 
 This within ES6 Class
 https://stackoverflow.com/questions/36489579/this-within-es6-class-method
+Using of this keyword inside class method in ES7
+https://stackoverflow.com/questions/51031012/using-of-this-keyword-inside-class-method-in-es7/51031188#51031188
 
 
 ES6 Functions Superiority
