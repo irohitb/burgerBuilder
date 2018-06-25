@@ -17,6 +17,11 @@
 // Index
 //-------------
 
+*Important note -> ES5 vs ES6
+1. ES6 doesn’t allow duplicate declaration of variables when we declare them using “let” or “const” in the same scope. This is very helpful in avoiding duplicate function expressions coming from different libraries (like the “add” function expression below).
+2. In Es5 for immediately invoked function we use something like (function() { /*something */ }()) in ES6 we coould simply use { /*something */ }
+---> *This in ES5 vs ES6* <------
+
 1. Ternary Expression
 
 2. Variable Scope
