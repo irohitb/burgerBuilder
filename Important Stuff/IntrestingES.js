@@ -1,3 +1,6 @@
+ES6 arrow function Firefox docs
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions#Lexical_this
+
 ES5 this keyword
 https://stackoverflow.com/questions/3127429/how-does-the-this-keyword-work
 
@@ -29,3 +32,7 @@ Innovocation Context vs Execut
 
 This within ES6 Class
 https://stackoverflow.com/questions/36489579/this-within-es6-class-method
+
+
+ES6 Functions Superiority
+https://hackernoon.com/javascript-es6-arrow-functions-and-lexical-this-f2a3e2a5e8c4
