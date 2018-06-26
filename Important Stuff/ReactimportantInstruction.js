@@ -38,6 +38,8 @@ This means we might be calling something in render i.e  you call some method in 
 4. Structure of Import and export
 
 5. Rendering
+	--> When does Render Happen in React
+	--> To find aread rendered using Chrome
 
 6. Pure Function in Javascript
 
@@ -169,6 +171,19 @@ For example this is the wrapping element..
 
 5
 //Rendering
+
+//When does React Render again
+React rerenders when,
+a) SetState is called, or states value changes
+b) props changes
+c) forceUpdate() is called(this is going to be deprecated)
+
+Everything inside parent is rendered?
+everything inside FullPost or newPosts ?
+No, when the state changes or rerender is initiated, only the render function gets called again, and from react 16.3 onwards, getDerivedStateFromProps() also gets called. Another function which gets called before a render on state/props update is shouldComponentUpdate()
+
+State changes in child
+Changes in state/props of child components will only rerender child component. But if a parent component is rerendered, its child component is also rerendered.
 //------
 //To understand area, re->rendered
 //Chrome -> Inspect -> three buttons -> Rendering -> Show paint area -> This paint everything which is re-rendered
